@@ -1,0 +1,63 @@
+.clouds{
+  position: absolute;
+	z-index: 0;
+width:100%;
+top: 0;
+bottom: 0;
+overflow: hidden;
+}
+
+.cloud1 {
+    position: absolute;
+    left: 80px;
+    top:260px;
+background-image: url("../img/cloud1.png");
+width: 54px;
+height: 23px;
+background-repeat:no-repeat;
+}
+
+.cloud2 {
+  position: absolute;
+  left: 260px;
+  top:480px;
+background-image: url("../img/cloud2.png");
+width: 125px;
+height: 36px;
+background-repeat:no-repeat;
+}
+
+
+.cloud3 {
+  position: absolute;
+  top:380px;
+right: 350px;
+
+background-image: url("../img/cloud3.png");
+width: 125px;
+height: 44px;
+background-repeat:no-repeat;
+}
+
+
+.cloud4 {
+  position: absolute;
+  top:170px;
+right:80px;
+background-image: url("../img/cloud4.png");
+width: 75px;
+height: 28px;
+background-repeat:no-repeat;
+}
+
+
+
+.balloon {
+  position: absolute;
+  left: 245px;
+  top:285px;
+  background-image: url("../img/balloon.png");
+  width: 64px;
+  height: 95px;
+  background-repeat:no-repeat;
+}
