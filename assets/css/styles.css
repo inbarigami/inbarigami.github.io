@@ -685,6 +685,22 @@ footer p a {
   color: #fff;
 }
 
+.ds {
+  background-color: white;
+  padding: 32px;
+  border-radius: 16px;
+  width: fit-content;
+  margin: auto;
+}
+
+.note {
+  background-color: #DFEAFF;
+  padding: 16px;
+  border-radius: 16px;
+  width: fit-content;
+  font-weight: 600;
+
+}
 
 /* -- Demo ads -- */
 @media (max-width: 1200px) {
@@ -1149,7 +1165,11 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
 
 }
 
+.portfoliods {
 
+  color: #fff;
+  background: #262448;
+}
 
 .onboarding p{
   text-align: center;
