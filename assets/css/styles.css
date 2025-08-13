@@ -1815,7 +1815,7 @@ margin: auto;
 @media (max-width: 600px) {
 
   section {
-    padding: 20px 30px;
+    padding: 20px 20px;
   }
 
   .imageside .grid li {
