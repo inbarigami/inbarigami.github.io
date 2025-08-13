@@ -1497,9 +1497,13 @@ margin: auto;
   }
 
   .project-top {
-    padding: 50px 50px;
+    padding: 50px 20px;
   }
-
+.ds {
+ 
+  padding: 16px;
+  border-radius: 16px;
+}
   .project-top .grid li,
   .project-top .grid li.small,
   .project-top .grid li.large{
