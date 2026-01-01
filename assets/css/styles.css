@@ -1664,9 +1664,13 @@ button::-moz-focus-inner,
   }
 
   .project-top {
-    padding: 50px 50px;
+    padding: 50px 20px;
   }
-
+.ds {
+ 
+  padding: 16px;
+  border-radius: 16px;
+}
   .project-top .grid li,
   .project-top .grid li.small,
   .project-top .grid li.large {
@@ -2114,7 +2118,7 @@ button::-moz-focus-inner,
 
 @media (max-width: 600px) {
   section {
-    padding: 20px 30px;
+    padding: 20px 20px;
   }
 
   .imageside .grid li {
