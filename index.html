@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -28,7 +28,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/agency.css">
 
   <script type="text/javascript">
@@ -40,39 +40,39 @@
 <body>
 
   <header>
-  <a href="index.html">  <h2>Inbar Amir</h2></a>
+  <a href="index.html">  <span class="site-title">Inbar Amir</span></a>
     <nav>
-      <li><a href="#about">About</a></li>
-      <li><a href="#works">Work</a></li>
-      <li><a href="#maker">Make</a></li>
-      <li><a href="#after">Extra</a></li>
+      <ul>
+        <li><a href="#about">About</a></li>
+       <!-- <li><a href="#works">Work</a></li>
+        <li><a href="#maker">Make</a></li>
+        <li><a href="#after">After hours</a></li>-->
+                <li><a href="creating-a-new-portfolio.html">Work</a></li>
+
+      </ul>
     </nav>
   </header>
 
 
   <section class="hero">
-    <div class="background-image" style=""></div>
+    <div class="background-image"></div>
     <ul class="grid">
       <li>
         <h1>Hi, I’m Inbar.</h1>
         <h3>
-          I’m a Product Designer at heart, <s>Product Manager</s> <s>Design Operations</s> Design Systems at work, and a full-time Maker of Things. :)</h3>
+          Product Designer at heart, <br/> Design System Lead at work,<br/> and a full-time maker of things. :)</h3>
       </li>
-      <li class="small" style=""><img src="assets/img/hero4.png" class="hero-img"></li>
-      </div>
+      <li class="small"><img src="assets/img/hero4.png" class="hero-img" alt="Portrait illustration of Inbar Amir"></li>
+    </ul>
   </section>
 
   <section class="product productbg" id="about">
-    <div class="custom-shape-divider-top-1597001337">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-      </svg>
-    </div>
+
 
 
 
     <ul class="grid work">
-      <li style=""><img src="assets/img/dslove.png"></li>
+      <li><img src="assets/img/dslove.png" alt="Illustration representing love for design systems"></li>
 
       <li>
         <h3 class="title">Design Systems</h3>
@@ -85,10 +85,10 @@
       </br>
       I fell in love with this field and I feel like it allows me to perfectly combine my love for design, research and organization.
     </p>
-          
-     
+
+
       </li>
-      </div>
+    </ul>
 
 
     <ul class="grid work">
@@ -99,42 +99,51 @@
         <p>I started at my previous workplace as a Product Designer, and was lucky enough to get an opprotunity to dive into the world of product management.</br></br>
           My role combined both - I researched, planned, designed, measured and supervised the development of some of the coolest products around.</p>
       </li>
-      <li style=""><img src="assets/img/product.png"></li>
-      </div>
+      <li><img src="assets/img/product.png" alt="Illustration of product design and management"></li>
+    </ul>
 
 
 
+      
       <ul class="grid work-imgs" id="works">
         <li class="">
 
-          <div class="grid-container">
-            <div class="work1"><a href="#livia" data-toggle="modal"><img src="assets/img/work-livia.png"></a></div>
-            <div class="work2"><a href="#upright" data-toggle="modal"><img src="assets/img/work-upright.png"></a></div>
-            <div class="work3"><a href="#biggercake" data-toggle="modal"><img src="assets/img/work-bc.png"></a></div>
+          <div class="work-carousel">
+            <button class="carousel-btn prev-btn" aria-label="Previous project">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="work-item carousel-slide"><a href="project-typography.html"><img src="assets/img/thumbnails/thumb-typography.png" alt="Typography Project"></a></div>
+                <div class="work-item carousel-slide"><a href="project-ds.html"><img src="assets/img/thumbnails/thumb-design-system.png" alt="Design System Project"></a></div>
+                <div class="work-item carousel-slide"><a href="project-data.html"><img src="assets/img/thumbnails/thumb-connected-data.png" alt="Connected Data Project"></a></div>
+                <div class="work-item carousel-slide"><a href="project-dynamic.html"><img src="assets/img/thumbnails/thumb-dynamic-pages.png" alt="Dynamic Pages Project"></a></div>
+              </div>
+            </div>
+            <button class="carousel-btn next-btn" aria-label="Next project">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
           </div>
+          <div class="carousel-dots"></div>
 
         </li>
 
 
         <li>
           <h3 class="title">Selected Work </h3>
-          <p class="subtitle">Or: not looking for a job</p>
+          <p class="subtitle">Or: my personal favs</p>
           <hr>
-          <p>My favourite three projects. All were created while working at <a class="a-link" href="https://tross.co" target="_blank">Tross</a>, and included branding, web design and user interface design.</br>
-            ← Check them out.
+          <p>A glance into some of my favorite projects. Click on any of them to see more details.</p>
 
         </li>
         </div>
+     
   </section>
 
 
 
   <section class="things thingsbg" id="maker">
-    <div class="custom-shape-divider-top-1597082338">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-      </svg>
-    </div>
+
     <ul class="grid">
       <li>
         <h3 class="title white">Maker of things</h3>
@@ -144,19 +153,14 @@
           </br></br>
           Recently I’ve started creating miniature paper furniture. It’s both cute and fun.</p>
       </li>
-      <li style=""><img src="assets/img/hero3.png"></li>
-      </div>
+      <li><img src="assets/img/hero3.png" alt="Creative projects and handmade crafts"></li>
+    </ul>
   </section>
 
 
   <section class="product facts" id="after">
-    <div class="custom-shape-divider-top-1597082492">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-      </svg>
-    </div>
     <ul class="grid">
-      <li style=""><img src="assets/img/dogs2.png"></li>
+      <li><img src="assets/img/dogs2.png" alt="Illustration of Deshe and Chai, two dogs"></li>
 
       <li>
         <h3 class="title">After Hours</h3>
@@ -175,7 +179,7 @@
           - Hebrew (native)</br>- English (native-wannabe)</br>- Spanish (B1)</br>- Danish (A1)</br>- I know about 300 words in ISL (Israeli Sign Language)
           </br>- Next on my list: French and Arabic</p>
       </li>
-      </div>
+    </ul>
   </section>
 
 
@@ -313,6 +317,76 @@
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/popper/popper.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    // Work Carousel
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector('.next-btn');
+      const prevButton = document.querySelector('.prev-btn');
+      const dotsContainer = document.querySelector('.carousel-dots');
+
+      let currentIndex = 0;
+      const slideCount = slides.length;
+
+      // Create dots
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update dots
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        updateCarousel();
+      }
+
+      nextButton.addEventListener('click', nextSlide);
+      prevButton.addEventListener('click', prevSlide);
+
+      // Auto-play functionality
+      let workAutoplayInterval;
+      const workCarouselContainer = document.querySelector('.work-carousel');
+
+      function startWorkAutoplay() {
+        workAutoplayInterval = setInterval(nextSlide, 3000);
+      }
+
+      function stopWorkAutoplay() {
+        clearInterval(workAutoplayInterval);
+      }
+
+      // Pause on hover
+      workCarouselContainer.addEventListener('mouseenter', stopWorkAutoplay);
+      workCarouselContainer.addEventListener('mouseleave', startWorkAutoplay);
+
+      // Start auto-play
+      startWorkAutoplay();
+    });
+  </script>
 
 </body>
 

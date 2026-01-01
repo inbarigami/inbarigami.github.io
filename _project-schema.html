@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -20,9 +20,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
 
-  <title>Inbar Amir - Maker of Things</title>
+  <title>Schema - Inbar Amir</title>
 
-  <meta property="og:title" content="Inbar Amir - Maker of Things" />
+  <meta property="og:title" content="Schema - Inbar Amir" />
   <meta property="og:description" content="I’m a Product Designer at heart, Product Manager at work, and a full-time Maker of Things." />
   <meta property="og:image" content="/assets/img/og-image.png" />
 
@@ -33,7 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/agency.css">
 
   <script type="text/javascript">
@@ -55,49 +55,83 @@
 
 <body>
 
-  <header class="white">
-  <a href="index.html">  <h2>Inbar Amir</h2></a>
-    <nav >
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#works">Work</a></li>
-      <li><a href="index.html#maker">Make</a></li>
-      <li><a href="index.html#after">Extra</a></li>
-      <li><a href="creating-a-portfolio.html">Portfolio</a></li>
+      <header>
+  <a href="index.html">  <span class="site-title">Inbar Amir</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">About</a></li>
+                <li><a href="creating-a-new-portfolio.html">Work</a></li>
 
+      </ul>
     </nav>
   </header>
 <a id="top"></a>
 
-    <section class="project-top internal portfoliosch">
+  <!-- Project Navigation -->
+  <nav class="project-nav-container">
+    <a href="project-internal.html" class="project-nav-btn prev">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      <span class="tooltip">Internal Collection</span>
+    </a>
+    <a href="creating-a-new-portfolio.html" class="project-nav-btn portfolio">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg>
+      <span class="tooltip">All Projects</span>
+    </a>
+    <a href="project-typography.html" class="project-nav-btn next">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      <span class="tooltip">Typography</span>
+    </a>
+  </nav>
 
+  <section class="project-opening project-padding" class="pb-20">
     <ul class="grid">
       <li>
-        <h1 class="title">Local Business Schema</h1>
-
-      </li>
-      <li style="padding-right: 0;">
-        <img src="assets/img/projects/schema/schema-hero.png" class="project-img">
-
-      </li>
-      </div>
-  </section>
-
-
-
-  <section class="project-opening project-padding">
-    <ul class="grid">
-      <li>
-        <h6 class="title">About the project</h6>
+        <h6 class="title">About</h6>
         <h1 class="title">Help search engines know your business better</h1>
 
       </li>  <hr class="hr-margin">
       </div>
   </section>
+
+  <!-- Table of Contents -->
+  <section class="toc-section">
+    <div class="toc-container">
+      <h3 class="toc-title" onclick="toggleTOC()">
+        <span class="toc-text">Local Business Schema</span>
+        <i class="fa fa-bars toc-toggle"></i>
+      </h3>
+      <nav class="toc-nav" id="toc-nav">
+        <ul class="toc-list">
+          <li><a href="#top">About</a></li>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#roles-and-responsibilities">Roles and Responsibilities</a></li>
+          <li><a href="#target-audience">Target Audience</a></li>
+          <li><a href="#high-level-goals">High Level Goals</a></li>
+          <li><a href="#the-solution">The Solution</a></li>
+          <li><a href="#the-process" class="toc-h2">The Process</a></li>
+          <li><a href="#competitor-research-interviews">Competitor Research & Interviews</a></li>
+          <li><a href="#field-types">Field Types</a></li>
+          <li><a href="#high-level-flows">High Level Flows</a></li>
+          <li><a href="#key-features" class="toc-h2">Key Features</a></li>
+          <li><a href="#read-only-popup">Read only popup based on existing fields</a></li>
+          <li><a href="#custom-fields">Custom fields</a></li>
+          <li><a href="#rich-results-validation">Rich Results Validation</a></li>
+          <li><a href="#multi-location-schema">Multi-location schema - show how more than 10 locations work?</a></li>
+          <li><a href="#releases" class="toc-h2">Releases</a></li>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#release-phases">Release Phases</a></li>
+          <li><a href="#impact">Impact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <div class="main-content">
   <section class="features">
 
     <ul class="grid">
       <li>
-        <h3 class="title">Background</h3>
+        <h3 class="title" id="background">Background</h3>
 
       </li>
       <li>
@@ -111,7 +145,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">Roles and Responsibilities</h3>
+        <h3 class="title" id="roles-and-responsibilities">Roles and Responsibilities</h3>
       </li>
       <li>
         <p>
@@ -124,7 +158,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="target-audience">
           Target Audience
         </h3>
       </li>
@@ -137,7 +171,7 @@ Our target audience was very broad, every site that represents a business - mean
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="high-level-goals">
           High Level Goals
         </h3>
       </li>
@@ -151,7 +185,7 @@ Our target audience was very broad, every site that represents a business - mean
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="the-solution">
           The Solution
         </h3>
       </li>
@@ -184,7 +218,7 @@ Local business schema is one type of Schema which focuses on the type of busines
     <ul class="grid">
       <li>
         <h6 class="title">02</h6>
-        <h1 class="title">The Process</h1>
+        <h2 class="title" id="the-process">The Process</h2>
 
       </li>      <hr class="hr-margin">
       </div>
@@ -194,7 +228,7 @@ Local business schema is one type of Schema which focuses on the type of busines
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="competitor-research-interviews">
           Competitor Research & Interviews
         </h3>
       </li>
@@ -209,7 +243,7 @@ Local business schema is one type of Schema which focuses on the type of busines
 
     <ul class="grid">
       <li>
-        <h3 class="title">Field Types</h3>
+        <h3 class="title" id="field-types">Field Types</h3>
 
       </li>
       <li>
@@ -224,7 +258,7 @@ Local business schema is one type of Schema which focuses on the type of busines
 
     <ul class="grid">
       <li>
-        <h3 class="title">High Level Flows
+        <h3 class="title" id="high-level-flows">High Level Flows
 </h3>
       </li>
       <li>
@@ -247,7 +281,7 @@ Local business schema is one type of Schema which focuses on the type of busines
     <ul class="grid">
       <li>
         <h6 class="title">03</h6>
-        <h1 class="title">Key Features</h1>
+        <h2 class="title" id="key-features">Key Features</h2>
 
       </li>  <hr class="hr-margin">
       </div>
@@ -258,7 +292,7 @@ Local business schema is one type of Schema which focuses on the type of busines
 
     <ul class="grid">
       <li>
-        <h3 class="title">Read only popup based on existing fields</h3>
+        <h3 class="title" id="read-only-popup">Read only popup based on existing fields</h3>
 
       </li>
       <li>
@@ -299,7 +333,7 @@ Local business schema is one type of Schema which focuses on the type of busines
 
       </li>
       <li>
-        <h3 class="title">Custom fields</h3>
+        <h3 class="title" id="custom-fields">Custom fields</h3>
 
         <p>
           Local Business Schema supports ~150 business types, each one requires different fields.
@@ -312,7 +346,7 @@ Local business schema is one type of Schema which focuses on the type of busines
       <ul class="grid">
 
         <li>
-          <h3 class="title">Rich Results Validation</h3>
+          <h3 class="title" id="rich-results-validation">Rich Results Validation</h3>
 
           <p>
             We allow users to validate that their schema is eligible to schema with a click of a button. This lets them make sure they filled in the right data before publishing the site and generating schema.
@@ -332,7 +366,7 @@ Local business schema is one type of Schema which focuses on the type of busines
 
           </li>
           <li>
-            <h3 class="title">Multi-location schema - show how more than 10 locations work?</h3>
+            <h3 class="title" id="multi-location-schema">Multi-location schema - show how more than 10 locations work?</h3>
 
             <p>
               Since business info was based on location - where each location had its data - I came up with a friendlier structure to handle and manage locations. According to our data, most people have up to 4 locations but we have a few clients that could have up to 10.
@@ -352,7 +386,7 @@ Local business schema is one type of Schema which focuses on the type of busines
     <ul class="grid">
       <li>
         <h6 class="title">04</h6>
-        <h1 class="title">Releases</h1>
+        <h2 class="title" id="releases">Releases</h2>
 
       </li>      <hr class="hr-margin">
       </div>
@@ -362,7 +396,7 @@ Local business schema is one type of Schema which focuses on the type of busines
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="scope">
           Scope
         </h3>
       </li>
@@ -379,7 +413,7 @@ Local business schema is one type of Schema which focuses on the type of busines
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="release-phases">
           Release Phases
         </h3>
       </li>
@@ -399,44 +433,18 @@ This feature was gradually release due to different clients with different needs
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="impact">
           Impact
         </h3>
       </li>
       <li>
         <p>
-This feature was happily recieved by our users as 'no-code schema'. We had more than 2K accounts and 25K sites that were using this. The majority of the sites were activated by API.
+This feature was happily received by our users as 'no-code schema'. We had more than 2K accounts and 25K sites that were using this. The majority of the sites were activated by API.
         </p>
       </li>
     </ul>
-
-  </br></br>  </br></br>
-<hr>
-<p class="">Thanks for reading.
-You can go <a href="#top" class="a-link dark bold" target="">back to the top ↑</a> or <a href="project-data.html" class="a-link dark bold" target="">off to the next project →</a></p>
 </section>
-</br></br></br>
-
-  <footer>
-    <ul class="grid">
-      <li>
-        <p>Template by <a href="https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox" target="_blank" class="a-link">Tutorialzine</a>. Humans courtesy of <a href="https://www.openpeeps.com/" target="_blank" class="a-link">Open
-            Peeps</a>.</br>© Inbar Amir 2020</p>
-      </li>
-
-      <li>
-        <a href="mailto:inbarp@gmail.com" target="_blank"><i class="fa fa-envelope social"></i></a>
-        <a href="https://www.facebook.com/inbarigami/" target="_blank"><i class="fa fa-facebook social"></i></a>
-        <a href="https://twitter.com/inbarigami" target="_blank"><i class="fa fa-twitter social"></i></a>
-        <a href="https://www.instagram.com/inbarigami/" target="_blank"><i class="fa fa-instagram social"></i></a>
-        <a href="https://www.linkedin.com/in/inbar-amir-bb34901b/" target="_blank"><i class="fa fa-linkedin social"></i></a>
-    </ul>
-
-    </li>
-    </div>
-
-
-  </footer>
+  </div>
 
 
 
@@ -446,6 +454,56 @@ You can go <a href="#top" class="a-link dark bold" target="">back to the top ↑
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/popper/popper.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    function toggleTOC() {
+      const nav = document.getElementById('toc-nav');
+      const section = document.querySelector('.toc-section');
+      const text = document.querySelector('.toc-text');
+      const mainContent = document.querySelector('.main-content');
+
+      if (section.classList.contains('collapsed')) {
+        // Expand
+        nav.style.display = 'block';
+        text.style.display = 'inline';
+        section.classList.remove('collapsed');
+        if (mainContent) mainContent.style.marginLeft = '280px';
+      } else {
+        // Collapse
+        nav.style.display = 'none';
+        text.style.display = 'none';
+        section.classList.add('collapsed');
+        if (mainContent) mainContent.style.marginLeft = '0';
+      }
+    }
+
+    // Highlight active TOC item on scroll
+    (function() {
+      const sections = document.querySelectorAll('h3[id], h2[id]');
+      const tocLinks = document.querySelectorAll('.toc-list a');
+
+      function highlightTOC() {
+        let current = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= (sectionTop - 150)) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', highlightTOC);
+      highlightTOC(); // Call once on load
+    })();
+  </script>
 
 </body>
 

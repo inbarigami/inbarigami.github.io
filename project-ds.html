@@ -1,501 +1,678 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-180221969-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180221969-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+      gtag("config", "UA-180221969-1");
+    </script>
 
-    gtag('config', 'UA-180221969-1');
-  </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
+    <title>Design System @Duda - Inbar Amir</title>
 
-  <title>Inbar Amir - Maker of Things</title>
+    <meta property="og:title" content="Design System @Duda - Inbar Amir" />
+    <meta
+      property="og:description"
+      content="I'm a Product Designer at heart, Product Manager at work, and a full-time Maker of Things."
+    />
+    <meta property="og:image" content="/assets/img/og-image.png" />
 
-  <meta property="og:title" content="Inbar Amir - Maker of Things" />
-  <meta property="og:description" content="I’m a Product Designer at heart, Product Manager at work, and a full-time Maker of Things." />
-  <meta property="og:image" content="/assets/img/og-image.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/img/fav.png" />
 
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="icon" type="image/png" href="assets/img/fav.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/agency.css" />
 
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/css/agency.css">
+    <script type="text/javascript">
+      (window.heap = window.heap || []),
+        (heap.load = function (e, t) {
+          (window.heap.appid = e), (window.heap.config = t = t || {});
+          var r = document.createElement("script");
+          (r.type = "text/javascript"),
+            (r.async = !0),
+            (r.src = "https://cdn.heapanalytics.com/js/heap-" + e + ".js");
+          var a = document.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(r, a);
+          for (
+            var n = function (e) {
+                return function () {
+                  heap.push(
+                    [e].concat(Array.prototype.slice.call(arguments, 0))
+                  );
+                };
+              },
+              p = [
+                "addEventProperties",
+                "addUserProperties",
+                "clearEventProperties",
+                "identify",
+                "resetIdentity",
+                "removeEventProperty",
+                "setEventProperties",
+                "track",
+                "unsetEventProperty",
+              ],
+              o = 0;
+            o < p.length;
+            o++
+          )
+            heap[p[o]] = n(p[o]);
+        });
+      heap.load("2839731021");
+    </script>
+  </head>
 
-  <script type="text/javascript">
-    window.heap = window.heap || [], heap.load = function(e, t) {
-      window.heap.appid = e, window.heap.config = t = t || {};
-      var r = document.createElement("script");
-      r.type = "text/javascript", r.async = !0, r.src = "https://cdn.heapanalytics.com/js/heap-" + e + ".js";
-      var a = document.getElementsByTagName("script")[0];
-      a.parentNode.insertBefore(r, a);
-      for (var n = function(e) {
-          return function() {
-            heap.push([e].concat(Array.prototype.slice.call(arguments, 0)))
-          }
-        }, p = ["addEventProperties", "addUserProperties", "clearEventProperties", "identify", "resetIdentity", "removeEventProperty", "setEventProperties", "track", "unsetEventProperty"], o = 0; o < p.length; o++) heap[p[o]] = n(p[o])
-    };
-    heap.load("2839731021");
-  </script>
-</head>
+  <body>
+    <header>
+      <a href="index.html"><span class="site-title">Inbar Amir</span></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="creating-a-new-portfolio.html">Work</a></li>
+        </ul>
+      </nav>
+    </header>
+    <a id="top"></a>
 
-<body>
-
-  <header class="white">
-    <a href="index.html">
-      <h2>Inbar Amir</h2>
-    </a>
-    <nav>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#works">Work</a></li>
-      <li><a href="index.html#maker">Make</a></li>
-      <li><a href="index.html#after">Extra</a></li>
-      <li><a href="creating-a-portfolio.html">Portfolio</a></li>
-
+    <!-- Project Navigation -->
+    <nav class="project-nav-container">
+      <a href="project-typography.html" class="project-nav-btn prev">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+        <span class="tooltip">Typography</span>
+      </a>
+      <a href="creating-a-new-portfolio.html" class="project-nav-btn portfolio">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z" />
+        </svg>
+        <span class="tooltip">All Projects</span>
+      </a>
+      <a href="project-pitch.html" class="project-nav-btn next">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        </svg>
+        <span class="tooltip">Pitch</span>
+      </a>
     </nav>
-  </header>
-  <a id="top"></a>
-  <section class="project-top portfoliods" style="padding-right:0;">
 
-    <ul class="grid">
-      <li>
-        <h1 class="title">Design System @Duda</h1>
-
-
-      </li>
-      <li style="padding-right: 0;">
-        <img src="assets/img/projects/ds/ds-main.png" class="project-img">
-
-      </li>
-      </div>
-  </section>
-
-
-
-  <section class="project-opening project-padding">
-    <ul class="grid">
-      <li>
-        <h6 class="title">About the project</h6>
-        <h1 class="title">Building a Design System in Sketch & Figma</h1>
-
-      </li>
-      <hr class="hr-margin">
-      </div>
-  </section>
-
-
-
-
-  <section class="features">
-    <ul class="grid">
-
-      <li style="flex-basis: 100%;">
-        <p>Our story begins in 2018. I joined Duda's product team and worked alongside 2 other designers.<br/>
-          After a year of working at Duda, a new designer joined the company and was asked to improve old parts of the platform.
-          These were ancient and dark parts that no one touched for years. Not having any guidelines, she invented her own language and re-created the same solutions that already existed in other parts of the platform.<br/><br/>
-          After some frustration from all sides, we decided to create a design system.
-        </p>
-      </li>
-    </ul>
-</section>
-<section class="project-opening portfoliods" style="background:#FFFFFF; padding: 50px 150px;">
-  <ul class="grid">
-    <img src="assets/img/projects/ds/ds-overview.png" class="project-hero-img">
-
-
-    </div>
-</section>
-
-
-    <section class="features">
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">The Problem</h3>
-
-      </li>
-      <li>
-        <p>- Inconsistencies across the Platform<br/>
-          - Some parts of the platform looked completely different<br/>
-          - Designers had to ask each other for their assets<br/>
-          - New designers had no way of knowing if something exists in the platform<br/>
-        - Designers (and developers) were re-creating components that already exist in the Platform
-        <br/><br/>
-        Our newest designer and I decided the only solution is to have one source of truth for all the designers - A Design System.
-
-        </p>
-      </li>
-    </ul>
-    <ul class="grid">
-      <li>
-        <h3 class="title">Research</h3>
-
-      </li>
-      <li>
-        <p>We wanted to learn as much as possible about Design Systems. We started from the most popular ones - Material Design, Spectrum by Adobe, Atlassian, Primer by GitHub, Carbon by IBM and more.
-          We investigated structures and tried to understand how to apply this structure to us. What are some common names for components? Should we have one Design System for all products? What goes into the Design System and what stays out?
-        </p>
-      </li>
-    </ul>
-
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Inventory
-        </h3>
-
-      </li>
-      <li>
-        <p>With all these questions in mind, we needed to understand what we're up against. What components do we currently have? <br/>
-We made a list of components to focus on and in 3 days we went over the platform and took screenshots of every component as it appears in every variation.        </p>
-      </li>
-    </ul>
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Compare
-        </h3>
-
-      </li>
-      <li>
-        <p>
-          After having most components in one place, we started comparing them. How many variations of input fields do we have? <br/>
-          We found different heights, different fonts, some with inner shadows (🥴) and some without, different type of hints under the inputs with different spacing, some with buttons on the side and some with buttons connected to them. A real mess.
-
-
-        </p>
-      </li>
-    </ul>
-  </section>
-
-    <section class="project-opening portfoliods" style="" >
-      <ul class="grid" style="justify-content: center;">
-        <img src="assets/img/projects/ds/variations.png" class="project-hero-img">
-        <p class="white" style="margin-bottom: 0;"><br/>
-          Examples of inconsistencies we found with search, input and dropdowns across the platform 🥲
-</p>
+    <div class="page-layout">
+      <!-- Table of Contents -->
+      <section class="toc-section">
+        <div class="toc-container">
+          <h3 class="toc-title" onclick="toggleTOC()">
+            <span class="toc-text">Design System @Duda</span>
+            <i class="fa fa-bars toc-toggle"></i>
+          </h3>
+          <nav class="toc-nav" id="toc-nav">
+            <ul class="toc-list">
+              <li><a href="#top">About</a></li>
+              <li><a href="#the-problem">The Problem</a></li>
+              <li><a href="#research">Research</a></li>
+              <li><a href="#inventory">Inventory</a></li>
+              <li><a href="#compare">Compare</a></li>
+              <li><a href="#define">Define</a></li>
+              <li><a href="#organize">Organize</a></li>
+              <li>
+                <a href="#present-design-system">Present the Design System</a>
+              </li>
+              <li><a href="#sketch-for-teams">Sketch for Teams</a></li>
+              <li><a href="#figma-love-story">Figma: A Love Story</a></li>
+              <li><a href="#zeroheight-comeback">Zeroheight Comeback</a></li>
+              <li><a href="#figma-cards-index">Figma Cards and Index</a></li>
+              <li>
+                <a href="#aligning-react-library">Aligning React Library</a>
+              </li>
+              <li><a href="#component-status">Component Status</a></li>
+              <li><a href="#naming">Naming</a></li>
+              <li><a href="#updates-sync">Updates and Sync</a></li>
+              <li><a href="#new-requests">New Requests</a></li>
+              <li><a href="#goal-consistency">Goal: Consistency</a></li>
+            </ul>
+          </nav>
         </div>
-    </section>
-    <section class="features">
+      </section>
 
-    <ul class="grid">
-      <li>
-        <h3 class="title">Define
-        </h3>
-
-      </li>
-      <li>
-        <p>Since we had a lot of variations in the platform and a lot were legacy components, we needed to define the relevant variations for each component and re-create it in Sketch.
-
-        </p>
-      </li>
-    </ul>
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Organize
-        </h3>
-
-      </li>
-      <li>
-        <p>When we had the majority of the components ready, we started thinking about the structure, naming conventions and categories.
-          We went for 4 main categories - Foundations, Atoms and molecules, Components and Misc (which contains system assets mostly).
-
-        </p>
-      </li>
-    </ul>
-</section>
-
-  <section class="project-opening" style="background: #ffffff; padding:20px 150px">
-    <ul class="grid">
-      <img src="assets/img/projects/ds/sketch-ds.png" class="project-hero-img">
-
-      </div>
-  </section>
-
-    <section class="features">
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Present the Design System
-        </h3>
-
-      </li>
-      <li>
-        <p>This is where things got complicated.
-          Our Sketch license at the time didn't allow for more than one designer to access the same Sketch file,
-          so we tried to come up with a way for the other designers (2 more were added in the meantime) to easily find what they are looking for. <br/><br/>
-          <b>1st try - Zeplin.</b><br/>
-          We created an artboard in Sketch for each component and  uploaded it to a dedicated project in Zeplin. Each component was presented according to its goal, usage and variants.
-          We even created an index to explain where to find each component. <br/>
-          This didn't work.<br/><br/>
-          <b>2nd try - Zeroheight.</b><br/>
-We uploaded everything to Zeroheight, created all the structure there and added all the info about each component. Zeroheight was searchable and accessible. A dream come true.<br/>
-In reality, no other designer entered it. They would look for components in Sketch and if they didn't find it, they either asked us or invented their own variation.
-
-        </p>
-      </li>
-    </ul>
-
-</section>
-
-<section class="project-opening portfoliods">
-  <ul class="grid" style="justify-content: center;">
-    <img src="assets/img/projects/ds/zeplin.png" class="project-hero-img"><br/><p class="white">Failed attempt to display our Design System on Zeplin</p><br/><br/><br/><br/><br/><br/>
-    <img src="assets/img/projects/ds/zero.png" class="project-hero-img"><p class="white">Components and guidelines on Zeroheight</p>
-
-    </div>
-</section>
-    <section class="features">
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Sketch for Teams
-        </h3>
-
-      </li>
-      <li>
-        <p>
-Moving to Sketch for Teams helped us, since other designers could open the Design System file and look for it there. We also found out about a new shortcut that would open the library assets from Sketch Workspace and allowed us to browse through the library.
-        </p>
-      </li>
-    </ul>
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Figma: A Love Story
-        </h3>
-
-      </li>
-      <li>
-        <p>For me, moving to Figma was the best decision ever. By now, I was on my own in the Design System domain as my partner in crime was going on maternity leave. Also, I was about to move from my position as PM/Designer to a full time Design Operations role.<br/>
-I learned Figma, re-created every component in Figma and then sorted them into pages for every component or category. Later on I divided them into two files - Foundations and Components. Foundations contain styles while Components contain.. well, components.
-        </p>
-      </li>
-    </ul>
-  </section>
-
-  <section class="project-opening portfoliods" style="background:#EFF0F2;" >
-    <ul class="grid">
-      <img src="assets/img/projects/ds/ds-cards.png" class="project-hero-img">
-      </div>
-  </section>
-      <section class="features">
+      <div class="main-content">
+        <!-- <section class="project-top portfoliods pr-0">
         <ul class="grid">
           <li>
-            <h3 class="title">Zeroheight Comeback
-            </h3>
-
+            <h6 class="title">About</h6>
+            <h1 class="title">Design System @Duda</h1>
           </li>
-          <li>
-            <p>I gave Zeroheight one last chance, and updated the Figma components on Zeroheight. That attempt failed once again, when no one was still using it and going into the design system file instead.
-
-            </p>
+          <li class="pr-0">
+            <img src="assets/img/projects/ds/ds-main.png" class="project-img">
           </li>
         </ul>
+      </section>-->
 
+        <section class="project-opening project-padding pb-20">
+          <ul class="grid">
+            <li>
+              <h6 class="title">About</h6>
+              <h1 class="title">Building a Design System in Sketch & Figma</h1>
+            </li>
+          </ul>
+          <hr class="hr-margin" />
+        </section>
 
-    <ul class="grid">
-      <li>
-        <h3 class="title">Figma Cards and Index
-        </h3>
+        <section class="features pt-20">
+          <ul class="grid pt-0">
+            <li class="flex-full">
+              <p>
+                Our story begins in 2018. I joined Duda's product team and
+                worked alongside 2 other designers.<br />
+                After a year of working at Duda, a new designer joined the
+                company and was asked to improve old parts of the platform.
+                These were ancient and dark parts that no one touched for years.
+                Not having any guidelines, she invented her own language and
+                re-created the same solutions that already existed in other
+                parts of the platform.<br /><br />
+                After some frustration from all sides, we decided to create a
+                design system.
+              </p>
+            </li>
+          </ul>
+        </section>
 
-      </li>
-      <li>
-        <p>
-After I conducted a survey among the designers (by now we were 11), it seems they used the Figma design system file as their source of info.
-So I decided to gather all the info and add it to Figma, so it will become our source of truth.<br/>
-Each component got a card, with the component name, goal, usage and states.<br/>
-I added an index page to the Design System file which included a card for each component or category, with a link and visual of sample components.
-        </p>
-      </li>
-    </ul>
+        <section class="project-opening portfoliods section-padding-small">
+          <ul class="grid">
+            <img
+              src="assets/img/projects/ds/ds-overview.png"
+              class="project-hero-img"
+            />
+          </ul>
+        </section>
+        <br /><br />
+        <section class="features">
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="the-problem">The Problem</h3>
+            </li>
+            <li>
+              <p>
+                - Inconsistencies across the Platform<br />
+                - Some parts of the platform looked completely different<br />
+                - Designers had to ask each other for their assets<br />
+                - New designers had no way of knowing if something exists in the
+                platform<br />
+                - Designers (and developers) were re-creating components that
+                already exist in the Platform
+                <br /><br />
+                Our newest designer and I decided the only solution is to have
+                one source of truth for all the designers - A Design System.
+              </p>
+            </li>
+          </ul>
 
-    <ul class="grid">
-      <li>
-        <h3 class="title">Aligning React Library
-        </h3>
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="research">Research</h3>
+            </li>
+            <li>
+              <p>
+                We wanted to learn as much as possible about Design Systems. We
+                started from the most popular ones - Material Design, Spectrum
+                by Adobe, Atlassian, Primer by GitHub, Carbon by IBM and more.
+                We investigated structures and tried to understand how to apply
+                this structure to us. What are some common names for components?
+                Should we have one Design System for all products? What goes
+                into the Design System and what stays out?
+              </p>
+            </li>
+          </ul>
 
-      </li>
-      <li>
-        <p>My next goal was to align our react library to the design system -
-          make sure any existing component in the library looks and behaves as it should, and create components that do not exist.<br/>
-          I started creating a spec of definitions for each component, and opening a Jira task for each component.
-          I created a template for this spec so other designers could create their own specs.
-        </p>
-      </li>
-    </ul>
-  </section>
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="inventory">Inventory</h3>
+            </li>
+            <li>
+              <p>
+                With all these questions in mind, we needed to understand what
+                we're up against. What components do we currently have? <br />
+                We made a list of components to focus on and in 3 days we went
+                over the platform and took screenshots of every component as it
+                appears in every variation.
+              </p>
+            </li>
+          </ul>
 
-  <section class="project-opening " style="padding: 70px ">
-    <ul class="grid">
-      <img src="assets/img/projects/ds/jira.png" class="project-hero-img">
-      </div>
-  </section>
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="compare">Compare</h3>
+            </li>
+            <li>
+              <p>
+                After having most components in one place, we started comparing
+                them. How many variations of input fields do we have? <br />
+                We found different heights, different fonts, some with inner
+                shadows (🥴) and some without, different type of hints under the
+                inputs with different spacing, some with buttons on the side and
+                some with buttons connected to them. A real mess.
+              </p>
+            </li>
+          </ul>
+        </section>
 
-      <section class="features">
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Component Status
-        </h3>
-
-      </li>
-      <li>
-        <p>To track our progress and keep everyone up to date with the latest component state,
-          I created statuses to add to each component:<br/>
-         - <b>Ready</b> - components that have been reviewed and are aligned with the design system.  <br/>
-        - <b>Before review</b> - components that have been developed but have not been reviewed.<br/>
-          - <b>Waiting for dev</b> - a spec has been created and is waiting for development.<br/>
-          - <b>No component</b> - this component does not exist in our react library.<br/><br/>
-When a component is ready or if it exists, I'd link the component from the design system to the component from the react library.
-
-        </p>
-      </li>
-    </ul>
-
-  </section>
-
-
-
-
-  <section class="project-opening portfoliods" style="padding: 70px ">
-    <ul class="grid">
-      <img src="assets/img/projects/ds/ds-index.png" class="project-hero-img">
-      </div>
-  </section>
-
-      <section class="features">
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Naming
-        </h3>
-
-      </li>
-      <li>
-        <p>To align designers and developers, I went over all components and styles with a client developer and we decided on naming that will be the same for both the design system library and the react component library.
-          This way, even if something is not connected (as text and color styles cannot be connected), it will still be easy to follow the design when developing it.
-        </p>
-      </li>
-    </ul>
-
-    <ul class="grid">
-      <li>
-        <h3 class="title">Updates and Sync
-        </h3>
-
-      </li>
-      <li>
-        <p>To keep both designers and developers up to date, I updated the designers on any change in a dedicated slack channel.
-          Each weekly meeting I would go over all the latest updates. <br/>
-          To update developers, I would send updates in their client channel, but these would be missed by a lot of the developers due to many messages in that channel.
-          <br/>
-          In addition, I asked the designers to forward my update to their developers every two weeks, in the beginning of the sprint planning.
-          Only time will tell if that worked.
-        </p>
-      </li>
-    </ul>
-
-
-        <ul class="grid">
-          <li>
-            <h3 class="title">New Requests
-            </h3>
-
-          </li>
-          <li>
-            <p>
-Design System is a living product, and since our product keeps growing - I created a request board in notion for the design team (and myself) to add tasks to, inform me of components that need fixing or missing guidelines.
-I connected this board to a dedicated slack channel to notify me on any new request.
+        <section class="features portfoliods">
+          <ul class="grid justify-center">
+            <img
+              src="assets/img/projects/ds/variations.png"
+              class="project-hero-img"
+            />
+            <p class="white mb-0">
+              <br />
+              Examples of inconsistencies we found with search, input and
+              dropdowns across the platform 🥲
             </p>
-          </li>
-        </ul>
-  </section>
+          </ul>
+        </section>
 
-<section class="project-opening " style="padding: 70px ">
-  <ul class="grid">
-    <img src="assets/img/projects/ds/notion.png" class="project-hero-img">
+        <section class="features">
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="define">Define</h3>
+            </li>
+            <li>
+              <p>
+                Since we had a lot of variations in the platform and a lot were
+                legacy components, we needed to define the relevant variations
+                for each component and re-create it in Sketch.
+              </p>
+            </li>
+          </ul>
+
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="organize">Organize</h3>
+            </li>
+            <li>
+              <p>
+                When we had the majority of the components ready, we started
+                thinking about the structure, naming conventions and categories.
+                We went for 4 main categories - Foundations, Atoms and
+                molecules, Components and Misc (which contains system assets
+                mostly).
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-opening section-padding-small">
+          <ul class="grid">
+            <img
+              src="assets/img/projects/ds/sketch-ds.png"
+              class="project-hero-img"
+            />
+          </ul>
+        </section>
+
+        <section class="features">
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="present-design-system">
+                Present the Design System
+              </h3>
+            </li>
+            <li>
+              <p>
+                This is where things got complicated. Our Sketch license at the
+                time didn't allow for more than one designer to access the same
+                Sketch file, so we tried to come up with a way for the other
+                designers (2 more were added in the meantime) to easily find
+                what they are looking for. <br /><br />
+                <b>1st try - Zeplin.</b><br />
+                We created an artboard in Sketch for each component and uploaded
+                it to a dedicated project in Zeplin. Each component was
+                presented according to its goal, usage and variants. We even
+                created an index to explain where to find each component. <br />
+                This didn't work.<br /><br />
+                <b>2nd try - Zeroheight.</b><br />
+                We uploaded everything to Zeroheight, created all the structure
+                there and added all the info about each component. Zeroheight
+                was searchable and accessible. A dream come true.<br />
+                In reality, no other designer entered it. They would look for
+                components in Sketch and if they didn't find it, they either
+                asked us or invented their own variation.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-opening portfoliods">
+          <ul class="grid justify-center">
+            <img
+              src="assets/img/projects/ds/zeplin.png"
+              class="project-hero-img"
+            /><br />
+            <p class="white">
+              Failed attempt to display our Design System on Zeplin
+            </p>
+            <br /><br /><br /><br /><br /><br />
+            <img
+              src="assets/img/projects/ds/zero.png"
+              class="project-hero-img"
+            />
+            <p class="white">Components and guidelines on Zeroheight</p>
+          </ul>
+        </section>
+
+        <section class="features">
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="sketch-for-teams">Sketch for Teams</h3>
+            </li>
+            <li>
+              <p>
+                Moving to Sketch for Teams helped us, since other designers
+                could open the Design System file and look for it there. We also
+                found out about a new shortcut that would open the library
+                assets from Sketch Workspace and allowed us to browse through
+                the library.
+              </p>
+            </li>
+          </ul>
+
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="figma-love-story">Figma: A Love Story</h3>
+            </li>
+            <li>
+              <p>
+                For me, moving to Figma was the best decision ever. By now, I
+                was on my own in the Design System domain as my partner in crime
+                was going on maternity leave. Also, I was about to move from my
+                position as PM/Designer to a full time Design Operations
+                role.<br />
+                I learned Figma, re-created every component in Figma and then
+                sorted them into pages for every component or category. Later on
+                I divided them into two files - Foundations and Components.
+                Foundations contain styles while Components contain.. well,
+                components.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-opening portfoliods bg-light">
+          <ul class="grid">
+            <img
+              src="assets/img/projects/ds/ds-cards.png"
+              class="project-hero-img"
+            />
+          </ul>
+        </section>
+
+        <section class="features">
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="zeroheight-comeback">
+                Zeroheight Comeback
+              </h3>
+            </li>
+            <li>
+              <p>
+                I gave Zeroheight one last chance, and updated the Figma
+                components on Zeroheight. That attempt failed once again, when
+                no one was still using it and going into the design system file
+                instead.
+              </p>
+            </li>
+          </ul>
+
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="figma-cards-index">
+                Figma Cards and Index
+              </h3>
+            </li>
+            <li>
+              <p>
+                After I conducted a survey among the designers (by now we were
+                11), it seems they used the Figma design system file as their
+                source of info. So I decided to gather all the info and add it
+                to Figma, so it will become our source of truth.<br />
+                Each component got a card, with the component name, goal, usage
+                and states.<br />
+                I added an index page to the Design System file which included a
+                card for each component or category, with a link and visual of
+                sample components.
+              </p>
+            </li>
+          </ul>
+
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="aligning-react-library">
+                Aligning React Library
+              </h3>
+            </li>
+            <li>
+              <p>
+                My next goal was to align our react library to the design system
+                - make sure any existing component in the library looks and
+                behaves as it should, and create components that do not
+                exist.<br />
+                I started creating a spec of definitions for each component, and
+                opening a Jira task for each component. I created a template for
+                this spec so other designers could create their own specs.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-opening" style="padding: 70px">
+          <ul class="grid">
+            <img
+              src="assets/img/projects/ds/jira.png"
+              class="project-hero-img"
+            />
+          </ul>
+        </section>
+
+        <section class="features">
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="component-status">Component Status</h3>
+            </li>
+            <li>
+              <p>
+                To track our progress and keep everyone up to date with the
+                latest component state, I created statuses to add to each
+                component:<br />
+                - <b>Ready</b> - components that have been reviewed and are
+                aligned with the design system.<br />
+                - <b>Before review</b> - components that have been developed but
+                have not been reviewed.<br />
+                - <b>Waiting for dev</b> - a spec has been created and is
+                waiting for development.<br />
+                - <b>No component</b> - this component does not exist in our
+                react library.<br /><br />
+                When a component is ready or if it exists, I'd link the
+                component from the design system to the component from the react
+                library.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-opening portfoliods" style="padding: 70px">
+          <ul class="grid">
+            <img
+              src="assets/img/projects/ds/ds-index.png"
+              class="project-hero-img"
+            />
+          </ul>
+        </section>
+
+        <section class="features">
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="naming">Naming</h3>
+            </li>
+            <li>
+              <p>
+                To align designers and developers, I went over all components
+                and styles with a client developer and we decided on naming that
+                will be the same for both the design system library and the
+                react component library. This way, even if something is not
+                connected (as text and color styles cannot be connected), it
+                will still be easy to follow the design when developing it.
+              </p>
+            </li>
+          </ul>
+
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="updates-sync">Updates and Sync</h3>
+            </li>
+            <li>
+              <p>
+                To keep both designers and developers up to date, I updated the
+                designers on any change in a dedicated slack channel. Each
+                weekly meeting I would go over all the latest updates. <br />
+                To update developers, I would send updates in their client
+                channel, but these would be missed by a lot of the developers
+                due to many messages in that channel.
+                <br />
+                In addition, I asked the designers to forward my update to their
+                developers every two weeks, in the beginning of the sprint
+                planning. Only time will tell if that worked.
+              </p>
+            </li>
+          </ul>
+
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="new-requests">New Requests</h3>
+            </li>
+            <li>
+              <p>
+                Design System is a living product, and since our product keeps
+                growing - I created a request board in notion for the design
+                team (and myself) to add tasks to, inform me of components that
+                need fixing or missing guidelines. I connected this board to a
+                dedicated slack channel to notify me on any new request.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-opening" style="padding: 70px">
+          <ul class="grid">
+            <img
+              src="assets/img/projects/ds/notion.png"
+              class="project-hero-img"
+            />
+          </ul>
+        </section>
+
+        <section class="features">
+          <ul class="grid">
+            <li>
+              <h3 class="title" id="goal-consistency">Goal: Consistency</h3>
+            </li>
+            <li>
+              <p>
+                The main goal of all this work was to have consistency across
+                the platform - which means we have to align the platform to the
+                new design system. To replace the new components across the
+                platform, I started creating Jira tasks based on specific
+                product areas. When squads have some spare time or work on a
+                specific screen, they could replace the components there to the
+                new ones. This is a process that will take a long while to
+                finish.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-opening project-padding align-center"></section>
+      </div>
     </div>
-</section>
 
-<section class="features">
+    <!-- Bootstrap core JavaScript-->
 
-<ul class="grid">
-<li>
-  <h3 class="title">Goal: Consistency
-  </h3>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/popper/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-</li>
-<li>
-  <p>The main goal of all this work was to have consistency across the platform - which means we have to align the platform to the new design system. To replace the new components across the platform, I started creating Jira tasks based on specific product areas. When squads have some spare time or work on a specific screen, they could replace the components there to the new ones.
-This is a process that will take a long while to finish.
-  </p>
-</li>
-</ul>
+    <script>
+      function toggleTOC() {
+        const nav = document.getElementById("toc-nav");
+        const section = document.querySelector(".toc-section");
+        const text = document.querySelector(".toc-text");
 
+        if (section.classList.contains("collapsed")) {
+          // Expand
+          nav.style.display = "block";
+          text.style.display = "inline";
+          section.classList.remove("collapsed");
+        } else {
+          // Collapse
+          nav.style.display = "none";
+          text.style.display = "none";
+          section.classList.add("collapsed");
+        }
+      }
 
+      // Highlight active TOC item on scroll
+      (function () {
+        const sections = document.querySelectorAll("h3[id], h2[id]");
+        const tocLinks = document.querySelectorAll(".toc-list a");
 
-</section>
+        function highlightTOC() {
+          let current = "";
 
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 150) {
+              current = section.getAttribute("id");
+            }
+          });
 
+          tocLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${current}`) {
+              link.classList.add("active");
+            }
+          });
+        }
 
-
-  <section class="project-opening project-padding" style="align-items:center;">
-
-
-    <hr>
-    <p class="">Thanks for reading.
-      You can go <a href="#top" class="a-link dark bold" target="">back to the top ↑</a> or <a href="project-data.html" class="a-link dark bold" target="">off to the next project →</a></p>
-  </section>
-  </br></br></br>
-
-
-  <footer>
-    <ul class="grid">
-      <li>
-        <p>Template by <a href="https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox" target="_blank" class="a-link">Tutorialzine</a>. Humans courtesy of <a href="https://www.openpeeps.com/" target="_blank" class="a-link">Open
-            Peeps</a>.</br>© Inbar Amir 2020</p>
-      </li>
-
-      <li>
-        <a href="mailto:inbarp@gmail.com" target="_blank"><i class="fa fa-envelope social"></i></a>
-        <a href="https://www.facebook.com/inbarigami/" target="_blank"><i class="fa fa-facebook social"></i></a>
-        <a href="https://twitter.com/inbarigami" target="_blank"><i class="fa fa-twitter social"></i></a>
-        <a href="https://www.instagram.com/inbarigami/" target="_blank"><i class="fa fa-instagram social"></i></a>
-        <a href="https://www.linkedin.com/in/inbar-amir-bb34901b/" target="_blank"><i class="fa fa-linkedin social"></i></a>
-    </ul>
-
-    </li>
-    </div>
-
-
-  </footer>
-
-
-
-
-  <!-- Bootstrap core JavaScript-->
-
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/popper/popper.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-</body>
-
+        window.addEventListener("scroll", highlightTOC);
+        highlightTOC(); // Call once on load
+      })();
+    </script>
+  </body>
 </html>

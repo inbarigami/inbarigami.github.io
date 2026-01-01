@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -20,9 +20,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
 
-  <title>Inbar Amir - Maker of Things</title>
+  <title>Internal Collection - Inbar Amir</title>
 
-  <meta property="og:title" content="Inbar Amir - Maker of Things" />
+  <meta property="og:title" content="Internal Collection - Inbar Amir" />
   <meta property="og:description" content="I’m a Product Designer at heart, Product Manager at work, and a full-time Maker of Things." />
   <meta property="og:image" content="/assets/img/og-image.png" />
 
@@ -33,7 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/agency.css">
 
   <script type="text/javascript">
@@ -55,48 +55,87 @@
 
 <body>
 
-  <header class="white">
-  <a href="index.html">  <h2>Inbar Amir</h2></a>
-    <nav >
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#works">Work</a></li>
-      <li><a href="index.html#maker">Make</a></li>
-      <li><a href="index.html#after">Extra</a></li>
-      <li><a href="creating-a-portfolio.html">Portfolio</a></li>
+      <header>
+  <a href="index.html">  <span class="site-title">Inbar Amir</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">About</a></li>
+                <li><a href="creating-a-new-portfolio.html">Work</a></li>
 
+      </ul>
     </nav>
   </header>
 
 <a id="top"></a>
 
-  <section class="project-top internal portfolioint" style="padding-right:0;">
+  <!-- Project Navigation -->
+  <nav class="project-nav-container">
+    <a href="project-dynamic.html" class="project-nav-btn prev">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      <span class="tooltip">Dynamic Pages</span>
+    </a>
+    <a href="creating-a-new-portfolio.html" class="project-nav-btn portfolio">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg>
+      <span class="tooltip">All Projects</span>
+    </a>
+    <a href="project-schema.html" class="project-nav-btn next">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      <span class="tooltip">Schema</span>
+    </a>
+  </nav>
+
+  <section class="project-opening project-padding" class="pb-20">
     <ul class="grid">
       <li>
-        <h1 class="title">Internal Collections</h1>
-      </li>
-      <li style="padding-right: 0;">
-        <img src="assets/img/projects/internal/internal-hero.png" class="project-img">
-
-      </li>
-      </div>
-  </section>
-
-
-
-  <section class="project-opening project-padding">
-    <ul class="grid">
-      <li>
-        <h6 class="title">About the project</h6>
+        <h6 class="title">About</h6>
         <h1 class="title">Built-in database in your website editor</h1>
 
       </li>  <hr class="hr-margin">
       </div>
   </section>
+
+  <!-- Table of Contents -->
+  <section class="toc-section">
+    <div class="toc-container">
+      <h3 class="toc-title" onclick="toggleTOC()">
+        <span class="toc-text">Internal Collections</span>
+        <i class="fa fa-bars toc-toggle"></i>
+      </h3>
+      <nav class="toc-nav" id="toc-nav">
+        <ul class="toc-list">
+          <li><a href="#top">About</a></li>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#roles-and-responsibilities">Roles and Responsibilities</a></li>
+          <li><a href="#target-audience">Target Audience</a></li>
+          <li><a href="#high-level-goals">High Level Goals</a></li>
+          <li><a href="#the-solution">The Solution</a></li>
+          <li><a href="#the-process" class="toc-h2">The Process</a></li>
+          <li><a href="#competitor-research">Competitor Research</a></li>
+          <li><a href="#interviews">Interviews</a></li>
+          <li><a href="#data-types-widgets">Data Types & Widgets</a></li>
+          <li><a href="#high-level-flows">High Level Flows</a></li>
+          <li><a href="#key-features" class="toc-h2">Key Features</a></li>
+          <li><a href="#add-fields">Add fields</a></li>
+          <li><a href="#context-menu">Context menu</a></li>
+          <li><a href="#expandable-screen">Expandable screen</a></li>
+          <li><a href="#data-formatting">Data formatting</a></li>
+          <li><a href="#edit-row">Edit row</a></li>
+          <li><a href="#releases" class="toc-h2">Releases</a></li>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#release-phases">Release Phases</a></li>
+          <li><a href="#beta">Beta</a></li>
+          <li><a href="#impact">Impact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <div class="main-content">
   <section class="features">
 
     <ul class="grid">
       <li>
-        <h3 class="title">Background</h3>
+        <h3 class="title" id="background">Background</h3>
 
       </li>
       <li>
@@ -110,7 +149,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">Roles and Responsibilities</h3>
+        <h3 class="title" id="roles-and-responsibilities">Roles and Responsibilities</h3>
       </li>
       <li>
         <p>
@@ -122,7 +161,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="target-audience">
           Target Audience
         </h3>
       </li>
@@ -140,7 +179,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="high-level-goals">
           High Level Goals
         </h3>
       </li>
@@ -156,7 +195,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="the-solution">
           The Solution
         </h3>
       </li>
@@ -184,7 +223,7 @@
     <ul class="grid">
       <li>
         <h6 class="title">02</h6>
-        <h1 class="title">The Process</h1>
+        <h2 class="title" id="the-process">The Process</h2>
 
       </li>      <hr class="hr-margin">
       </div>
@@ -194,7 +233,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="competitor-research">
           Competitor Research
         </h3>
       </li>
@@ -209,7 +248,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">Interviews</h3>
+        <h3 class="title" id="interviews">Interviews</h3>
 
       </li>
       <li>
@@ -224,7 +263,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">Data Types & Widgets</h3>
+        <h3 class="title" id="data-types-widgets">Data Types & Widgets</h3>
       </li>
       <li>
         <p>
@@ -236,7 +275,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">High Level Flows</h3>
+        <h3 class="title" id="high-level-flows">High Level Flows</h3>
       </li>
       <li>
         <p>With the internal collections we had a technical benefit that could improve the flow tremendously. We still had the longer flow, similar to dynamic pages with external collections. but now we could introduce an easier to discover and easier to manage flow.
@@ -278,7 +317,7 @@
     <ul class="grid">
       <li>
         <h6 class="title">03</h6>
-        <h1 class="title">Key Features</h1>
+        <h2 class="title" id="key-features">Key Features</h2>
 
       </li>  <hr class="hr-margin">
       </div>
@@ -293,7 +332,7 @@
 
       </li>
       <li>
-        <h3 class="title">Add fields</h3>
+        <h3 class="title" id="add-fields">Add fields</h3>
 
         <p>
           Flexible table-like interface that allows the user to add a field of their choice, name it and set formatting (if possible for this field type).
@@ -304,7 +343,7 @@
       <ul class="grid">
 
         <li>
-          <h3 class="title">Context menu</h3>
+          <h3 class="title" id="context-menu">Context menu</h3>
 
           <p>
             When right-clicking the table rows and fields, we displayed a variety of actions. The initial release included basic actions such as edit and delete, and gradually we added more actions.
@@ -321,7 +360,7 @@
 
           </li>
           <li>
-            <h3 class="title">Expandable screen</h3>
+            <h3 class="title" id="expandable-screen">Expandable screen</h3>
 
             <p>
               To create a convenient way to edit data in the table, we added an option to expand the table to full screen. That way users can focus on editing and managing their data, viewing all the data at the same time.
@@ -331,7 +370,7 @@
           <ul class="grid">
 
             <li>
-              <h3 class="title">Data formatting</h3>
+              <h3 class="title" id="data-formatting">Data formatting</h3>
 
               <p>
               To allow users to keep their data clean, we added a data formatting options for several field types.
@@ -351,7 +390,7 @@
 
           <ul class="grid">
 
-<li style="flex-basis:33%;">              <h3 class="title">Edit row</h3>
+<li style="flex-basis:33%;">              <h3 class="title" id="edit-row">Edit row</h3>
 
 
             </li>
@@ -403,7 +442,7 @@
     <ul class="grid">
       <li>
         <h6 class="title">04</h6>
-        <h1 class="title">Releases</h1>
+        <h2 class="title" id="releases">Releases</h2>
 
       </li>  <hr class="hr-margin">
       </div>
@@ -413,7 +452,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="scope">
           Scope
         </h3>
       </li>
@@ -428,7 +467,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="release-phases">
           Release Phases
         </h3>
       </li>
@@ -442,7 +481,7 @@
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="beta">
         Beta
         </h3>
       </li>
@@ -463,7 +502,7 @@ We had a closed beta in the end we sent a survey.
 
     <ul class="grid">
       <li>
-        <h3 class="title">
+        <h3 class="title" id="impact">
           Impact
         </h3>
       </li>
@@ -474,33 +513,8 @@ We had a closed beta in the end we sent a survey.
         </p>
       </li>
     </ul>
-  </br></br>  </br></br>
-<hr>
-<p class="">Thanks for reading.
-You can go <a href="#top" class="a-link dark bold" target="">back to the top ↑</a> or <a href="project-schema.html" class="a-link dark bold" target="">off to the next project →</a></p>
 </section>
-</br></br></br>
-
-  <footer>
-    <ul class="grid">
-      <li>
-        <p>Template by <a href="https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox" target="_blank" class="a-link">Tutorialzine</a>. Humans courtesy of <a href="https://www.openpeeps.com/" target="_blank" class="a-link">Open
-            Peeps</a>.</br>© Inbar Amir 2020</p>
-      </li>
-
-      <li>
-        <a href="mailto:inbarp@gmail.com" target="_blank"><i class="fa fa-envelope social"></i></a>
-        <a href="https://www.facebook.com/inbarigami/" target="_blank"><i class="fa fa-facebook social"></i></a>
-        <a href="https://twitter.com/inbarigami" target="_blank"><i class="fa fa-twitter social"></i></a>
-        <a href="https://www.instagram.com/inbarigami/" target="_blank"><i class="fa fa-instagram social"></i></a>
-        <a href="https://www.linkedin.com/in/inbar-amir-bb34901b/" target="_blank"><i class="fa fa-linkedin social"></i></a>
-    </ul>
-
-    </li>
-    </div>
-
-
-  </footer>
+  </div>
 
 
 
@@ -510,6 +524,56 @@ You can go <a href="#top" class="a-link dark bold" target="">back to the top ↑
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/popper/popper.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    function toggleTOC() {
+      const nav = document.getElementById('toc-nav');
+      const section = document.querySelector('.toc-section');
+      const text = document.querySelector('.toc-text');
+      const mainContent = document.querySelector('.main-content');
+
+      if (section.classList.contains('collapsed')) {
+        // Expand
+        nav.style.display = 'block';
+        text.style.display = 'inline';
+        section.classList.remove('collapsed');
+        if (mainContent) mainContent.style.marginLeft = '280px';
+      } else {
+        // Collapse
+        nav.style.display = 'none';
+        text.style.display = 'none';
+        section.classList.add('collapsed');
+        if (mainContent) mainContent.style.marginLeft = '0';
+      }
+    }
+
+    // Highlight active TOC item on scroll
+    (function() {
+      const sections = document.querySelectorAll('h3[id], h2[id]');
+      const tocLinks = document.querySelectorAll('.toc-list a');
+
+      function highlightTOC() {
+        let current = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= (sectionTop - 150)) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', highlightTOC);
+      highlightTOC(); // Call once on load
+    })();
+  </script>
 
 </body>
 
