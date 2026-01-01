@@ -1,737 +1,833 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180221969-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-180221969-1');
-  </script>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-
-  <title>Duda Sans - Inbar Amir</title>
-
-  <meta property="og:title" content="Duda Sans - Inbar Amir" />
-  <meta property="og:description" content="A custom variable font designed for clarity, scalability, and distinction." />
-  <meta property="og:image" content="/assets/img/og-image.png" />
-
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="icon" type="image/png" href="assets/img/fav.png" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/css/agency.css">
-
-  <style>
-    /* Design Tokens */
-    :root {
-      --bg-primary: #0a0f1a;
-      --bg-secondary: #121827;
-      --bg-card: rgba(255, 255, 255, 0.03);
-      --accent: #ff6b4a;
-      --accent-glow: rgba(255, 107, 74, 0.3);
-      --text-primary: #ffffff;
-      --text-secondary: rgba(255, 255, 255, 0.7);
-      --text-muted: rgba(255, 255, 255, 0.5);
-      --border: rgba(255, 255, 255, 0.1);
-      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --gradient-text: linear-gradient(135deg, var(--accent) 0%, #ffd93d 100%);
-    }
-
-    /* Duda Sans Variable Font */
-    @font-face {
-      font-family: 'Duda Sans';
-      src: url('assets/css/DudaSansVF.ttf') format('truetype-variations');
-      font-weight: 100 900;
-      font-stretch: 75% 125%;
-      font-style: normal;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Duda Sans', sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Glass Morphism */
-    .glass {
-      background: var(--bg-card);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-180221969-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      gtag("js", new Date());
+      gtag("config", "UA-180221969-1");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+
+    <title>Duda Sans - Inbar Amir</title>
+
+    <meta property="og:title" content="Duda Sans - Inbar Amir" />
+    <meta
+      property="og:description"
+      content="A custom variable font designed for clarity, scalability, and distinction."
+    />
+    <meta property="og:image" content="/assets/img/og-image.png" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/img/fav.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/agency.css" />
+
+    <style>
+      /* Design Tokens */
+      :root {
+        --bg-primary: #0a0f1a;
+        --bg-secondary: #121827;
+        --bg-card: rgba(255, 255, 255, 0.03);
+        --accent: #ff6b4a;
+        --accent-glow: rgba(255, 107, 74, 0.3);
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.7);
+        --text-muted: rgba(255, 255, 255, 0.5);
+        --border: rgba(255, 255, 255, 0.1);
+        --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --gradient-text: linear-gradient(
+          135deg,
+          var(--accent) 0%,
+          #ffd93d 100%
+        );
       }
-    }
 
-    @keyframes pulseGlow {
-      0%, 100% {
-        opacity: 0.5;
-        transform: scale(1);
+      /* Duda Sans Variable Font */
+      @font-face {
+        font-family: "Duda Sans";
+        src: url("assets/css/DudaSansVF.ttf") format("truetype-variations");
+        font-weight: 100 900;
+        font-stretch: 75% 125%;
+        font-style: normal;
       }
-      50% {
-        opacity: 0.8;
-        transform: scale(1.1);
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
 
-    .fade-in {
-      animation: fadeIn 0.8s ease-out forwards;
-    }
+      body {
+        font-family: "Duda Sans", sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 20px;
-      position: relative;
-      overflow: hidden;
-    }
+      /* Glass Morphism */
+      .glass {
+        background: var(--bg-card);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+      }
 
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      animation: pulseGlow 8s ease-in-out infinite;
-      z-index: 0;
-    }
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    .orb-1 {
-      width: 400px;
-      height: 400px;
-      background: var(--accent-glow);
-      top: -200px;
-      right: -100px;
-    }
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          opacity: 0.5;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.1);
+        }
+      }
 
-    .orb-2 {
-      width: 500px;
-      height: 500px;
-      background: rgba(102, 126, 234, 0.2);
-      bottom: -250px;
-      left: -150px;
-      animation-delay: 4s;
-    }
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 1200px;
-    }
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        position: relative;
+        overflow: hidden;
+      }
 
-    .hero-title {
-      font-size: clamp(60px, 15vw, 180px);
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 20px;
-      background: var(--gradient-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        animation: pulseGlow 8s ease-in-out infinite;
+        z-index: 0;
+      }
 
-    .hero-subtitle {
-      font-size: clamp(16px, 2vw, 24px);
-      color: var(--text-secondary);
-      margin-bottom: 40px;
-      font-weight: 300;
-    }
+      .orb-1 {
+        width: 400px;
+        height: 400px;
+        background: var(--accent-glow);
+        top: -200px;
+        right: -100px;
+      }
 
-    /* Weight Slider */
-    .weight-control {
-      margin: 40px 0;
-      padding: 40px;
-      max-width: 600px;
-      margin: 40px auto;
-    }
+      .orb-2 {
+        width: 500px;
+        height: 500px;
+        background: rgba(102, 126, 234, 0.2);
+        bottom: -250px;
+        left: -150px;
+        animation-delay: 4s;
+      }
 
-    .weight-display {
-      font-size: clamp(14px, 2vw, 18px);
-      color: var(--accent);
-      margin-bottom: 20px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        max-width: 1200px;
+      }
 
-    .slider-container {
-      position: relative;
-    }
+      .hero-title {
+        font-size: clamp(60px, 15vw, 180px);
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 20px;
+        background: var(--gradient-text);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
 
-    input[type="range"] {
-      width: 100%;
-      height: 8px;
-      border-radius: 4px;
-      background: var(--bg-secondary);
-      outline: none;
-      -webkit-appearance: none;
-    }
+      .hero-subtitle {
+        font-size: clamp(16px, 2vw, 24px);
+        color: var(--text-secondary);
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
 
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--accent);
-      cursor: pointer;
-      box-shadow: 0 0 20px var(--accent-glow);
-      transition: transform 0.2s;
-    }
+      /* Weight Slider */
+      .weight-control {
+        margin: 40px 0;
+        padding: 40px;
+        max-width: 600px;
+        margin: 40px auto;
+      }
 
-    input[type="range"]::-webkit-slider-thumb:hover {
-      transform: scale(1.2);
-    }
+      .weight-display {
+        font-size: clamp(14px, 2vw, 18px);
+        color: var(--accent);
+        margin-bottom: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
 
-    input[type="range"]::-moz-range-thumb {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--accent);
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 0 20px var(--accent-glow);
-    }
+      .slider-container {
+        position: relative;
+      }
 
-    .pangram-card {
-      margin-top: 60px;
-      padding: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+      input[type="range"] {
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: var(--bg-secondary);
+        outline: none;
+        -webkit-appearance: none;
+      }
 
-    .pangram-text {
-      font-size: clamp(18px, 3vw, 32px);
-      line-height: 1.5;
-      color: var(--text-primary);
-    }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent);
+        cursor: pointer;
+        box-shadow: 0 0 20px var(--accent-glow);
+        transition: transform 0.2s;
+      }
 
-    /* Section Styles */
-    section {
-      padding: 100px 20px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+      input[type="range"]::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+      }
 
-    .section-title {
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 700;
-      margin-bottom: 60px;
-      text-align: center;
-    }
+      input[type="range"]::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent);
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 0 20px var(--accent-glow);
+      }
 
-    /* Weight Showcase Grid */
-    .weight-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
+      .pangram-card {
+        margin-top: 60px;
+        padding: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-    .weight-card {
-      padding: 40px 30px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+      .pangram-text {
+        font-size: clamp(18px, 3vw, 32px);
+        line-height: 1.5;
+        color: var(--text-primary);
+      }
 
-    .weight-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 40px rgba(255, 107, 74, 0.2);
-    }
+      /* Section Styles */
+      section {
+        padding: 100px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
 
-    .weight-sample {
-      font-size: clamp(32px, 4vw, 48px);
-      margin-bottom: 15px;
-      font-family: 'Duda Sans', sans-serif;
-    }
+      .section-title {
+        font-size: clamp(36px, 6vw, 64px);
+        font-weight: 700;
+        margin-bottom: 60px;
+        text-align: center;
+      }
 
-    .weight-label {
-      font-size: 14px;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    /* Character Grid */
-    .char-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-      gap: 15px;
-      padding: 60px 40px;
-      margin: 40px 0;
-    }
-
-    .char-cell {
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: 400;
-      transition: all 0.3s;
-      border-radius: 8px;
-      cursor: default;
-    }
-
-    .char-cell:hover {
-      background: var(--bg-card);
-      color: var(--accent);
-      transform: scale(1.1);
-      border: 1px solid var(--accent);
-    }
-
-    /* Type Scale */
-    .type-scale {
-      padding: 60px 40px;
-      margin: 40px 0;
-    }
-
-    .scale-item {
-      margin-bottom: 30px;
-      display: flex;
-      align-items: baseline;
-      gap: 30px;
-      padding: 20px;
-      border-radius: 12px;
-      transition: background 0.3s;
-    }
-
-    .scale-item:hover {
-      background: var(--bg-card);
-    }
-
-    .scale-label {
-      font-size: 14px;
-      color: var(--text-muted);
-      min-width: 60px;
-      font-weight: 400;
-    }
-
-    .scale-text {
-      font-family: 'Duda Sans', sans-serif;
-      color: var(--text-primary);
-      font-weight: 400;
-    }
-
-    /* Sample Paragraphs */
-    .samples-grid {
-      display: grid;
-      gap: 40px;
-      margin: 60px 0;
-    }
-
-    .sample-card {
-      padding: 50px;
-      transition: transform 0.3s;
-    }
-
-    .sample-card:hover {
-      transform: translateX(10px);
-    }
-
-    .sample-label {
-      font-size: 12px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .sample-headline {
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .sample-body {
-      font-size: clamp(16px, 2vw, 20px);
-      line-height: 1.6;
-      color: var(--text-secondary);
-      font-weight: 400;
-    }
-
-    /* Features Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin: 60px 0;
-    }
-
-    .feature-card {
-      padding: 40px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature-icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-      color: var(--accent);
-    }
-
-    .feature-title {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    .feature-desc {
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-muted);
-      font-size: 14px;
-      border-top: 1px solid var(--border);
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    /* Navigation */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 20px 40px;
-      backdrop-filter: blur(20px);
-      background: rgba(10, 15, 26, 0.8);
-      border-bottom: 1px solid var(--border);
-    }
-
-    header a {
-      color: var(--text-primary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    header a:hover {
-      color: var(--accent);
-    }
-
-    .site-title {
-      font-weight: 700;
-      font-size: 18px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
+      /* Weight Showcase Grid */
       .weight-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
       }
 
+      .weight-card {
+        padding: 40px 30px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .weight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 40px rgba(255, 107, 74, 0.2);
+      }
+
+      .weight-sample {
+        font-size: clamp(32px, 4vw, 48px);
+        margin-bottom: 15px;
+        font-family: "Duda Sans", sans-serif;
+      }
+
+      .weight-label {
+        font-size: 14px;
+        color: var(--text-muted);
+        font-weight: 400;
+      }
+
+      /* Character Grid */
       .char-grid {
-        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 15px;
+        padding: 60px 40px;
+        margin: 40px 0;
+      }
+
+      .char-cell {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 400;
+        transition: all 0.3s;
+        border-radius: 8px;
+        cursor: default;
+      }
+
+      .char-cell:hover {
+        background: var(--bg-card);
+        color: var(--accent);
+        transform: scale(1.1);
+        border: 1px solid var(--accent);
+      }
+
+      /* Type Scale */
+      .type-scale {
+        padding: 60px 40px;
+        margin: 40px 0;
       }
 
       .scale-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: baseline;
+        gap: 30px;
+        padding: 20px;
+        border-radius: 12px;
+        transition: background 0.3s;
       }
-    }
-  </style>
 
-  <script type="text/javascript">
-    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
-    heap.load("2839731021");
-  </script>
-</head>
+      .scale-item:hover {
+        background: var(--bg-card);
+      }
 
-<body>
+      .scale-label {
+        font-size: 14px;
+        color: var(--text-muted);
+        min-width: 60px;
+        font-weight: 400;
+      }
 
-  <header>
-    <a href="index.html"><span class="site-title">Inbar Amir</span></a>
-  </header>
+      .scale-text {
+        font-family: "Duda Sans", sans-serif;
+        color: var(--text-primary);
+        font-weight: 400;
+      }
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+      /* Sample Paragraphs */
+      .samples-grid {
+        display: grid;
+        gap: 40px;
+        margin: 60px 0;
+      }
 
-    <div class="hero-content fade-in">
-      <h1 class="hero-title" id="heroTitle">Duda Sans</h1>
-      <p class="hero-subtitle">A custom variable font designed for clarity, scalability, and distinction</p>
+      .sample-card {
+        padding: 50px;
+        transition: transform 0.3s;
+      }
 
-      <div class="weight-control glass">
-        <div class="weight-display">Weight: <span id="weightValue">900</span></div>
-        <div class="slider-container">
-          <input type="range" id="weightSlider" min="100" max="900" value="900" step="100">
+      .sample-card:hover {
+        transform: translateX(10px);
+      }
+
+      .sample-label {
+        font-size: 12px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .sample-headline {
+        font-size: clamp(32px, 5vw, 56px);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .sample-body {
+        font-size: clamp(16px, 2vw, 20px);
+        line-height: 1.6;
+        color: var(--text-secondary);
+        font-weight: 400;
+      }
+
+      /* Features Grid */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 60px 0;
+      }
+
+      .feature-card {
+        padding: 40px;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: var(--accent);
+      }
+
+      .feature-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .feature-desc {
+        font-size: 16px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 60px 20px;
+        color: var(--text-muted);
+        font-size: 14px;
+        border-top: 1px solid var(--border);
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      /* Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 20px 40px;
+        backdrop-filter: blur(20px);
+        background: rgba(10, 15, 26, 0.8);
+        border-bottom: 1px solid var(--border);
+      }
+
+      header a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      header a:hover {
+        color: var(--accent);
+      }
+
+      .site-title {
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .weight-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .char-grid {
+          grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        }
+
+        .scale-item {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+      }
+    </style>
+
+    <script type="text/javascript">
+      (window.heap = window.heap || []),
+        (heap.load = function (e, t) {
+          (window.heap.appid = e), (window.heap.config = t = t || {});
+          var r = document.createElement("script");
+          (r.type = "text/javascript"),
+            (r.async = !0),
+            (r.src = "https://cdn.heapanalytics.com/js/heap-" + e + ".js");
+          var a = document.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(r, a);
+          for (
+            var n = function (e) {
+                return function () {
+                  heap.push(
+                    [e].concat(Array.prototype.slice.call(arguments, 0))
+                  );
+                };
+              },
+              p = [
+                "addEventProperties",
+                "addUserProperties",
+                "clearEventProperties",
+                "identify",
+                "resetIdentity",
+                "removeEventProperty",
+                "setEventProperties",
+                "track",
+                "unsetEventProperty",
+              ],
+              o = 0;
+            o < p.length;
+            o++
+          )
+            heap[p[o]] = n(p[o]);
+        });
+      heap.load("2839731021");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html"><span class="site-title">Inbar Amir</span></a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+
+      <div class="hero-content fade-in">
+        <h1 class="hero-title" id="heroTitle">Duda Sans</h1>
+        <p class="hero-subtitle">
+          A custom variable font designed for clarity, scalability, and
+          distinction
+        </p>
+
+        <div class="weight-control glass">
+          <div class="weight-display">
+            Weight: <span id="weightValue">900</span>
+          </div>
+          <div class="slider-container">
+            <input
+              type="range"
+              id="weightSlider"
+              min="100"
+              max="900"
+              value="900"
+              step="100"
+            />
+          </div>
+        </div>
+
+        <div class="pangram-card glass">
+          <p class="pangram-text" id="pangramText">
+            The quick brown fox jumps over the lazy dog
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="pangram-card glass">
-        <p class="pangram-text" id="pangramText">
-          The quick brown fox jumps over the lazy dog
-        </p>
+    <!-- Weight Showcase -->
+    <section>
+      <h2 class="section-title">Font Weights</h2>
+      <div class="weight-grid">
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 100">Typography</div>
+          <div class="weight-label">Thin · 100</div>
+        </div>
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 200">Typography</div>
+          <div class="weight-label">Extra Light · 200</div>
+        </div>
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 300">Typography</div>
+          <div class="weight-label">Light · 300</div>
+        </div>
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 400">Typography</div>
+          <div class="weight-label">Regular · 400</div>
+        </div>
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 500">Typography</div>
+          <div class="weight-label">Medium · 500</div>
+        </div>
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 600">Typography</div>
+          <div class="weight-label">Semibold · 600</div>
+        </div>
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 700">Typography</div>
+          <div class="weight-label">Bold · 700</div>
+        </div>
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 800">Typography</div>
+          <div class="weight-label">Extra Bold · 800</div>
+        </div>
+        <div class="weight-card glass">
+          <div class="weight-sample" style="font-weight: 900">Typography</div>
+          <div class="weight-label">Black · 900</div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Weight Showcase -->
-  <section>
-    <h2 class="section-title">Font Weights</h2>
-    <div class="weight-grid">
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 100;">Typography</div>
-        <div class="weight-label">Thin · 100</div>
-      </div>
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 200;">Typography</div>
-        <div class="weight-label">Extra Light · 200</div>
-      </div>
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 300;">Typography</div>
-        <div class="weight-label">Light · 300</div>
-      </div>
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 400;">Typography</div>
-        <div class="weight-label">Regular · 400</div>
-      </div>
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 500;">Typography</div>
-        <div class="weight-label">Medium · 500</div>
-      </div>
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 600;">Typography</div>
-        <div class="weight-label">Semibold · 600</div>
-      </div>
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 700;">Typography</div>
-        <div class="weight-label">Bold · 700</div>
-      </div>
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 800;">Typography</div>
-        <div class="weight-label">Extra Bold · 800</div>
-      </div>
-      <div class="weight-card glass">
-        <div class="weight-sample" style="font-weight: 900;">Typography</div>
-        <div class="weight-label">Black · 900</div>
-      </div>
-    </div>
-  </section>
+    <!-- Character Set -->
+    <section>
+      <h2 class="section-title">Character Set</h2>
+      <div class="char-grid glass" id="charGrid"></div>
+    </section>
 
-  <!-- Character Set -->
-  <section>
-    <h2 class="section-title">Character Set</h2>
-    <div class="char-grid glass" id="charGrid"></div>
-  </section>
+    <!-- Type Scale -->
+    <section>
+      <h2 class="section-title">Type Scale</h2>
+      <div class="type-scale glass">
+        <div class="scale-item">
+          <span class="scale-label">72px</span>
+          <span class="scale-text" style="font-size: 72px">Large Display</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-label">56px</span>
+          <span class="scale-text" style="font-size: 56px">Heading 1</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-label">40px</span>
+          <span class="scale-text" style="font-size: 40px">Heading 2</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-label">32px</span>
+          <span class="scale-text" style="font-size: 32px">Heading 3</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-label">24px</span>
+          <span class="scale-text" style="font-size: 24px">Heading 4</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-label">18px</span>
+          <span class="scale-text" style="font-size: 18px">Body Large</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-label">16px</span>
+          <span class="scale-text" style="font-size: 16px">Body Regular</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-label">14px</span>
+          <span class="scale-text" style="font-size: 14px">Body Small</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-label">12px</span>
+          <span class="scale-text" style="font-size: 12px">Caption</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- Type Scale -->
-  <section>
-    <h2 class="section-title">Type Scale</h2>
-    <div class="type-scale glass">
-      <div class="scale-item">
-        <span class="scale-label">72px</span>
-        <span class="scale-text" style="font-size: 72px;">Large Display</span>
-      </div>
-      <div class="scale-item">
-        <span class="scale-label">56px</span>
-        <span class="scale-text" style="font-size: 56px;">Heading 1</span>
-      </div>
-      <div class="scale-item">
-        <span class="scale-label">40px</span>
-        <span class="scale-text" style="font-size: 40px;">Heading 2</span>
-      </div>
-      <div class="scale-item">
-        <span class="scale-label">32px</span>
-        <span class="scale-text" style="font-size: 32px;">Heading 3</span>
-      </div>
-      <div class="scale-item">
-        <span class="scale-label">24px</span>
-        <span class="scale-text" style="font-size: 24px;">Heading 4</span>
-      </div>
-      <div class="scale-item">
-        <span class="scale-label">18px</span>
-        <span class="scale-text" style="font-size: 18px;">Body Large</span>
-      </div>
-      <div class="scale-item">
-        <span class="scale-label">16px</span>
-        <span class="scale-text" style="font-size: 16px;">Body Regular</span>
-      </div>
-      <div class="scale-item">
-        <span class="scale-label">14px</span>
-        <span class="scale-text" style="font-size: 14px;">Body Small</span>
-      </div>
-      <div class="scale-item">
-        <span class="scale-label">12px</span>
-        <span class="scale-text" style="font-size: 12px;">Caption</span>
-      </div>
-    </div>
-  </section>
+    <!-- Sample Paragraphs -->
+    <section>
+      <h2 class="section-title">In Context</h2>
+      <div class="samples-grid">
+        <div class="sample-card glass">
+          <div class="sample-label">Marketing Headline</div>
+          <h3 class="sample-headline">
+            Build Websites at the Speed of Business
+          </h3>
+          <p class="sample-body">
+            Create stunning, professional websites in minutes with our
+            award-winning platform trusted by agencies worldwide.
+          </p>
+        </div>
 
-  <!-- Sample Paragraphs -->
-  <section>
-    <h2 class="section-title">In Context</h2>
-    <div class="samples-grid">
-      <div class="sample-card glass">
-        <div class="sample-label">Marketing Headline</div>
-        <h3 class="sample-headline">Build Websites at the Speed of Business</h3>
-        <p class="sample-body">Create stunning, professional websites in minutes with our award-winning platform trusted by agencies worldwide.</p>
+        <div class="sample-card glass">
+          <div class="sample-label">Product UI</div>
+          <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 12px">
+            Connected Data
+          </h4>
+          <p class="sample-body" style="font-size: 14px">
+            Sync external data sources and display dynamic content on your site.
+            Automatically update your pages when your data changes.
+          </p>
+        </div>
+
+        <div class="sample-card glass">
+          <div class="sample-label">Long-form Content</div>
+          <p class="sample-body">
+            Typography is more than just selecting a pretty font. It's about
+            creating a visual hierarchy, establishing rhythm, and ensuring that
+            content is not only readable but engaging. Duda Sans was designed
+            with these principles in mind, offering exceptional legibility
+            across all screen sizes while maintaining the distinctive character
+            that makes a brand memorable. From tiny UI elements to
+            billboard-sized displays, every weight and glyph has been
+            meticulously crafted to perform beautifully.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="sample-card glass">
-        <div class="sample-label">Product UI</div>
-        <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Connected Data</h4>
-        <p class="sample-body" style="font-size: 14px;">Sync external data sources and display dynamic content on your site. Automatically update your pages when your data changes.</p>
+    <!-- Features -->
+    <section>
+      <h2 class="section-title">Features</h2>
+      <div class="features-grid">
+        <div class="feature-card glass">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Variable</h3>
+          <p class="feature-desc">
+            One file with infinite weights from 100 to 900. Smooth interpolation
+            for precise control.
+          </p>
+        </div>
+
+        <div class="feature-card glass">
+          <div class="feature-icon">🌍</div>
+          <h3 class="feature-title">Multilingual</h3>
+          <p class="feature-desc">
+            Extended character sets supporting Latin, Greek, Hebrew, and more
+            languages.
+          </p>
+        </div>
+
+        <div class="feature-card glass">
+          <div class="feature-icon">👁</div>
+          <h3 class="feature-title">Readable</h3>
+          <p class="feature-desc">
+            Optimized x-height and spacing ensure maximum legibility on all
+            screens.
+          </p>
+        </div>
+
+        <div class="feature-card glass">
+          <div class="feature-icon">✨</div>
+          <h3 class="feature-title">Clean</h3>
+          <p class="feature-desc">
+            Modern geometric forms with humanist touches for a contemporary
+            feel.
+          </p>
+        </div>
+
+        <div class="feature-card glass">
+          <div class="feature-icon">🎯</div>
+          <h3 class="feature-title">Versatile</h3>
+          <p class="feature-desc">
+            From tiny UI elements to massive billboards—designed to perform at
+            any size.
+          </p>
+        </div>
+
+        <div class="feature-card glass">
+          <div class="feature-icon">♿</div>
+          <h3 class="feature-title">Accessible</h3>
+          <p class="feature-desc">
+            Meets WCAG standards for contrast and readability across all use
+            cases.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="sample-card glass">
-        <div class="sample-label">Long-form Content</div>
-        <p class="sample-body">
-          Typography is more than just selecting a pretty font. It's about creating a visual hierarchy,
-          establishing rhythm, and ensuring that content is not only readable but engaging. Duda Sans
-          was designed with these principles in mind, offering exceptional legibility across all screen
-          sizes while maintaining the distinctive character that makes a brand memorable. From tiny UI
-          elements to billboard-sized displays, every weight and glyph has been meticulously crafted
-          to perform beautifully.
-        </p>
-      </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+      <p>
+        © 2024 Inbar Amir · Duda Sans Custom Typeface ·
+        <a href="creating-a-new-portfolio.html">Back to Portfolio</a>
+      </p>
+    </footer>
 
-  <!-- Features -->
-  <section>
-    <h2 class="section-title">Features</h2>
-    <div class="features-grid">
-      <div class="feature-card glass">
-        <div class="feature-icon">⚡</div>
-        <h3 class="feature-title">Variable</h3>
-        <p class="feature-desc">One file with infinite weights from 100 to 900. Smooth interpolation for precise control.</p>
-      </div>
+    <script>
+      // Weight Slider
+      const slider = document.getElementById("weightSlider");
+      const weightValue = document.getElementById("weightValue");
+      const heroTitle = document.getElementById("heroTitle");
+      const pangramText = document.getElementById("pangramText");
 
-      <div class="feature-card glass">
-        <div class="feature-icon">🌍</div>
-        <h3 class="feature-title">Multilingual</h3>
-        <p class="feature-desc">Extended character sets supporting Latin, Greek, Hebrew, and more languages.</p>
-      </div>
-
-      <div class="feature-card glass">
-        <div class="feature-icon">👁</div>
-        <h3 class="feature-title">Readable</h3>
-        <p class="feature-desc">Optimized x-height and spacing ensure maximum legibility on all screens.</p>
-      </div>
-
-      <div class="feature-card glass">
-        <div class="feature-icon">✨</div>
-        <h3 class="feature-title">Clean</h3>
-        <p class="feature-desc">Modern geometric forms with humanist touches for a contemporary feel.</p>
-      </div>
-
-      <div class="feature-card glass">
-        <div class="feature-icon">🎯</div>
-        <h3 class="feature-title">Versatile</h3>
-        <p class="feature-desc">From tiny UI elements to massive billboards—designed to perform at any size.</p>
-      </div>
-
-      <div class="feature-card glass">
-        <div class="feature-icon">♿</div>
-        <h3 class="feature-title">Accessible</h3>
-        <p class="feature-desc">Meets WCAG standards for contrast and readability across all use cases.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 Inbar Amir · Duda Sans Custom Typeface · <a href="creating-a-new-portfolio.html">Back to Portfolio</a></p>
-  </footer>
-
-  <script>
-    // Weight Slider
-    const slider = document.getElementById('weightSlider');
-    const weightValue = document.getElementById('weightValue');
-    const heroTitle = document.getElementById('heroTitle');
-    const pangramText = document.getElementById('pangramText');
-
-    slider.addEventListener('input', (e) => {
-      const weight = e.target.value;
-      weightValue.textContent = weight;
-      heroTitle.style.fontWeight = weight;
-      pangramText.style.fontWeight = weight;
-    });
-
-    // Generate Character Grid
-    const charGrid = document.getElementById('charGrid');
-    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const lowercase = 'abcdefghijklmnopqrstuvwxyz';
-    const numbers = '0123456789';
-    const special = '!@#$%^&*()_+-=[]{}|;:\'",.<>?/~`';
-
-    const allChars = uppercase + lowercase + numbers + special;
-
-    allChars.split('').forEach(char => {
-      const cell = document.createElement('div');
-      cell.className = 'char-cell';
-      cell.textContent = char;
-      charGrid.appendChild(cell);
-    });
-
-    // Fade in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
+      slider.addEventListener("input", (e) => {
+        const weight = e.target.value;
+        weightValue.textContent = weight;
+        heroTitle.style.fontWeight = weight;
+        pangramText.style.fontWeight = weight;
       });
-    });
 
-    document.querySelectorAll('section').forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(30px)';
-      section.style.transition = 'opacity 0.6s, transform 0.6s';
-      observer.observe(section);
-    });
-  </script>
+      // Generate Character Grid
+      const charGrid = document.getElementById("charGrid");
+      const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const lowercase = "abcdefghijklmnopqrstuvwxyz";
+      const numbers = "0123456789";
+      const special = "!@#$%^&*()_+-=[]{}|;:'\",.<>?/~`";
 
-</body>
+      const allChars = uppercase + lowercase + numbers + special;
 
+      allChars.split("").forEach((char) => {
+        const cell = document.createElement("div");
+        cell.className = "char-cell";
+        cell.textContent = char;
+        charGrid.appendChild(cell);
+      });
+
+      // Fade in on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      });
+
+      document.querySelectorAll("section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "opacity 0.6s, transform 0.6s";
+        observer.observe(section);
+      });
+    </script>
+  </body>
 </html>
