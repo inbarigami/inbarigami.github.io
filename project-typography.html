@@ -162,7 +162,7 @@
       <nav>
         <ul>
           <li><a href="index.html">About</a></li>
-          <li><a href="creating-a-new-portfolio.html">Work</a></li>
+          <li><a href="creating-a-portfolio.html">Work</a></li>
         </ul>
       </nav>
     </header>
@@ -170,23 +170,23 @@
 
     <!-- Project Navigation -->
     <nav class="project-nav-container">
-      <a href="project-upright.html" class="project-nav-btn prev">
+      <a href="project-ds.html" class="project-nav-btn prev">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
         </svg>
-        <span class="tooltip">Upright</span>
+        <span class="tooltip">Design System</span>
       </a>
-      <a href="creating-a-new-portfolio.html" class="project-nav-btn portfolio">
+      <a href="creating-a-portfolio.html" class="project-nav-btn portfolio">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z" />
         </svg>
         <span class="tooltip">All Projects</span>
       </a>
-      <a href="project-ds.html" class="project-nav-btn next">
+      <a href="project-data.html" class="project-nav-btn next">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
         </svg>
-        <span class="tooltip">Design System</span>
+        <span class="tooltip">Connected Data</span>
       </a>
     </nav>
 
@@ -369,14 +369,15 @@
               </p>
               <br /><br />
               <p class="duda-sans-text stress-text">
-                Align, Balloon, Better, Bottle, Builder, Compute, Content, Data,
-                Device, Endless, Filter, Hello, Interface, Junction, Keyboard,
-                Level, Manager, Network, Obvious, Platform, Processor, Product,
-                Quality, Scroll, Settings, System, Toffee, Toggle, Traffic,
-                Transform, Unity, Version, Widget, Workflow, X-Axis, Yellow,
-                Zero <br />AVATAR · API · CMS · JSON · UI · UX · URL · OAuth ·
-                HTML · XML <br />0123456789 · 12° · 45% · 3/4 · 4:56 · 42:15:01
-                · €42 · $80 · — – ( ) [ ] { } / & @ #
+                After, Align, Balloon, Better, Bottle, Builder, Compute,
+                Content, Craft, Data, Device, Efficienty, Endless, Filter,
+                Hello, Interface, Junction, Keyboard, Level, Manager, Network,
+                Obvious, Platform, Processor, Product, Quality, Scroll,
+                Settings, System, Toffee, Toggle, Traffic, Transform, Unity,
+                Version, Widget, Workflow, X-Axis, Yellow, Zero
+                <br /><br />AVATAR · API · CMS · JSON · UI · UX · URL · OAuth ·
+                HTML · XML <br /><br />0123456789 · 12° · 45% · 3/4 · 4:56 ·
+                42:15:01 · €42 · $80 · — – ( ) [ ] { } / & @ #
               </p>
             </li>
           </ul>
@@ -397,7 +398,7 @@
               <p class="duda-sans-text stress-text">
                 æsthetic, über, façade, coöperate, ångström, smörgåsbord,
                 piñata, rôle, voilà, naïve, Zażółć, gęślą, jaźń, Příliš,
-                žluťoučký, kůň, Őrült, tűzvész, Łódź
+                žluťoučký, kůň, Őrült, tűzvész, Łódź, selvfølgelig
               </p>
             </li>
           </ul>
@@ -420,14 +421,29 @@
             </div>
           </div>
         </section>
-
+        <br /><br />
         <section class="features" id="fun" style="align-items: flex-start">
           <h3 class="title" id="system-vocabulary">
             Fun is part of the process
           </h3>
           <p>Exploring letterforms</p>
+          <br /><br />
+
+          <label for="spacingSlider1" class="duda-sans-text">
+            Letter Spacing: <span id="spacingValue1">-120</span>px
+          </label>
+          <input
+            type="range"
+            id="spacingSlider1"
+            min="-340"
+            max="-100"
+            step="1"
+            value="-120"
+            class="custom-slider"
+          />
           <div
-            class="duda-sans-text"
+            class="duda-sans-text letter-display"
+            id="letterDisplay1"
             style="letter-spacing: -120px; font-size: 400px"
           >
             <span class="letter-sample">O</span>
@@ -435,9 +451,23 @@
             <span class="letter-sample">G</span>
             <span class="letter-sample">Q</span>
           </div>
+          <br />
 
+          <label for="spacingSlider2" class="duda-sans-text">
+            Letter Spacing: <span id="spacingValue2">-92</span>px
+          </label>
+          <input
+            type="range"
+            id="spacingSlider2"
+            min="-340"
+            max="-100"
+            step="1"
+            value="-92"
+            class="custom-slider"
+          />
           <div
-            class="duda-sans-text"
+            class="duda-sans-text letter-display"
+            id="letterDisplay2"
             style="letter-spacing: -92px; font-size: 400px"
           >
             <span class="letter-sample">a</span>
@@ -445,6 +475,58 @@
             <span class="letter-sample">c</span>
             <span class="letter-sample">d</span>
             <span class="letter-sample">e</span>
+          </div>
+          <br />
+
+          <label for="spacingSlider3" class="duda-sans-text">
+            Letter Spacing: <span id="spacingValue3">-190</span>px
+          </label>
+          <input
+            type="range"
+            id="spacingSlider3"
+            min="-350"
+            max="0"
+            step="1"
+            value="-190"
+            class="custom-slider"
+          />
+          <div
+            class="duda-sans-text letter-display"
+            id="letterDisplay3"
+            style="letter-spacing: -190px; font-size: 400px"
+          >
+            <span class="letter-sample">P</span>
+            <span class="letter-sample">R</span>
+
+            <span class="letter-sample">K</span>
+          </div>
+          <br />
+
+          <label for="spacingSlider4" class="duda-sans-text">
+            Letter Spacing: <span id="spacingValue4">0</span>px
+          </label>
+
+          <div
+            class="duda-sans-text letter-display"
+            id="letterDisplay4"
+            style="font-size: 200px"
+          >
+            <span class="letter-sample">Aa</span>
+            <span class="letter-sample">Gg</span>
+            <span class="letter-sample">Ss</span>
+          </div>
+          <br />
+
+          <label for="spacingSlider5" class="duda-sans-text">
+            Letter Spacing: <span id="spacingValue5">0</span>px
+          </label>
+
+          <div
+            class="duda-sans-text letter-display"
+            id="letterDisplay5"
+            style="font-size: 300px"
+          >
+            <span class="">Craft </span>
           </div>
         </section>
         <section class="features">
@@ -472,6 +554,24 @@
             display.style.fontWeight = weight;
           });
         });
+      })();
+
+      // Individual letter spacing sliders
+      (function () {
+        // Setup each slider independently
+        for (let i = 1; i <= 5; i++) {
+          const slider = document.getElementById(`spacingSlider${i}`);
+          const valueDisplay = document.getElementById(`spacingValue${i}`);
+          const letterDisplay = document.getElementById(`letterDisplay${i}`);
+
+          if (slider && valueDisplay && letterDisplay) {
+            slider.addEventListener("input", function (e) {
+              const spacing = e.target.value;
+              valueDisplay.textContent = spacing;
+              letterDisplay.style.letterSpacing = spacing + "px";
+            });
+          }
+        }
       })();
     </script>
 
