@@ -1757,7 +1757,7 @@ button::-moz-focus-inner,
   }
 
   .features {
-    padding: 50px 50px;
+    padding: 0px;
   }
 }
 
@@ -1767,7 +1767,7 @@ button::-moz-focus-inner,
   }
 
   .features {
-    padding: 40px 50px;
+    padding: 0px;
   }
 }
 
@@ -1781,7 +1781,7 @@ button::-moz-focus-inner,
   }
 
   .features {
-    padding: 50px 50px;
+    padding: 0px;
   }
   .imageside {
     padding: 50px 50px;
@@ -1989,7 +1989,7 @@ button::-moz-focus-inner,
   }
 
   .features {
-    padding: 20px 20px;
+    padding: 0px;
   }
 
   .features .grid {
@@ -2951,10 +2951,6 @@ hr {
 
 /* Hide TOC on smaller screens */
 @media (max-width: 1400px) {
-  .toc-section {
-    display: none;
-  }
-
   .project-opening,
   .features {
     margin-left: 0 !important;
@@ -3213,6 +3209,9 @@ h3[id] {
 
 /* Tablet and smaller desktop screens */
 @media (max-width: 1200px) {
+  .toc-section {
+    display: none;
+  }
   .example-text {
     font-size: 120px;
   }
@@ -3330,7 +3329,6 @@ h3[id] {
   }
 
   .features#fun {
-    padding: 20px 0;
   }
 
   .features#fun label {
