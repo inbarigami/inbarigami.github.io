@@ -697,6 +697,23 @@ header nav li:last-child {
   text-align: center;
 }
 
+/* Utility spacing classes - replacing inline styles */
+.section-padding-large {
+  padding: 70px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
 /*-------------
  	Footer
 -------------*/
