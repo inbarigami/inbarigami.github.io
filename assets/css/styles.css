@@ -2756,11 +2756,6 @@ section p {
   margin-bottom: 18px;
 }
 
-/* Remove forced white text on captions etc. */
-.white {
-  color: var(--text) !important;
-}
-
 /* ------------------------------------------
    Images inside sections (consistent, neutral)
 ------------------------------------------ */
