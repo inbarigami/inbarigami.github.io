@@ -665,6 +665,13 @@ header nav li:last-child {
   padding: 18px 42px;
 }
 
+/* Content wrapper for semantic HTML */
+.content-wrapper {
+  width: 100%;
+  padding: 0 30px;
+  text-align: center;
+}
+
 /*-------------
  	Footer
 -------------*/
@@ -678,6 +685,30 @@ footer {
   padding: 30px 0;
 }
 
+/* New semantic footer layout */
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.footer-text {
+  flex-basis: 60%;
+  text-align: left;
+}
+
+.footer-social {
+  flex-basis: 40%;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Legacy grid support */
 footer .grid li {
   flex-basis: 40%;
   text-align: left;
@@ -1193,6 +1224,7 @@ button::-moz-focus-inner,
   margin-bottom: 15px;
 }
 
+.portfolio-section .title,
 .portfoliobg .title {
   font: 40px "Montserrat", sans-serif;
   font-weight: 600;
@@ -1292,36 +1324,19 @@ button::-moz-focus-inner,
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.portfoliobg {
+/* Consolidated portfolio section class - replaces all portfolio variant classes */
+.portfolio-section {
   color: #fff;
   background: #ffffff;
 }
 
-.portfoliodb {
-  color: #fff;
-  background: #ffffff;
-}
-
-.portfoliodp {
-  color: #fff;
-  background: transparent;
-}
-
-.portfolioint {
-  color: #fff;
-  background: #ffffff;
-}
-
-.portfoliosch {
-  color: #fff;
-  background: #ffffff;
-}
-
-.portfoliods {
-  color: #fff;
-  background: #ffffff;
-}
-
+/* Legacy class support - kept for backwards compatibility */
+.portfoliobg,
+.portfoliodb,
+.portfoliodp,
+.portfolioint,
+.portfoliosch,
+.portfoliods,
 .portfoliopitch {
   color: #fff;
   background: #ffffff;
@@ -1898,10 +1913,8 @@ button::-moz-focus-inner,
     flex-direction: column-reverse;
   }
 
-  .portfoliodp .grid {
-    flex-direction: column-reverse;
-  }
-
+  .portfolio-section .grid,
+  .portfoliodp .grid,
   .portfoliosch .grid {
     flex-direction: column-reverse;
   }
@@ -1976,6 +1989,25 @@ button::-moz-focus-inner,
   footer {
     padding: 80px 15px;
   }
+
+  /* Responsive footer for semantic structure */
+  .footer-content {
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .footer-text,
+  .footer-social {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  /* Legacy grid support */
   footer .grid li {
     flex-basis: 100%;
     text-align: center;
@@ -2110,34 +2142,20 @@ button::-moz-focus-inner,
   letter-spacing: 0.7px;
 }
 
-/* Maintain existing portfolio background colors */
-.portfolio-card.portfoliodb {
+/* Portfolio card styling - consolidated from individual variants */
+.portfolio-card {
   color: #fff;
   background: #ffffff;
 }
 
-.portfolio-card.portfoliodp {
-  color: #fff;
-  background: transparent;
-}
-
-.portfolio-card.portfolioint {
-  color: #fff;
-  background: #ffffff;
-}
-
-.portfolio-card.portfoliosch {
-  color: #fff;
-  background: #ffffff;
-  opacity: 1;
-}
-
-.portfolio-card.portfoliods {
-  color: #fff;
-  background: #ffffff;
-}
-
-.portfolio-card.portfoliobg {
+/* Legacy support for portfolio card variants - kept for backwards compatibility */
+.portfolio-card.portfoliodb,
+.portfolio-card.portfoliodp,
+.portfolio-card.portfolioint,
+.portfolio-card.portfoliosch,
+.portfolio-card.portfoliods,
+.portfolio-card.portfoliobg,
+.portfolio-card.portfoliopitch {
   color: #fff;
   background: #ffffff;
 }
@@ -2503,6 +2521,7 @@ header.white nav a:hover {
 
 /* Make ALL "portfolio / ds" dark gradients go away on these pages */
 .portfolio,
+.portfolio-section,
 .portfoliobg,
 .portfoliods {
   background: #ffffff !important;
