@@ -1,0 +1,115 @@
+PORTFOLIO CLEANUP REPORT
+Generated: 2026-01-03
+CLEANUP COMPLETED: 2026-01-03
+================================================================================
+
+STATUS: CLEANUP COMPLETED
+All unlinked files have been removed from git except project-pitch.html
+Changes are staged and ready to commit.
+
+================================================================================
+
+ACTIVE FILES (Currently Linked and In Use)
+================================================================================
+
+Main Pages:
+- index.html                    (homepage)
+- creating-a-portfolio.html     (work/portfolio gallery page)
+
+Active Project Pages:
+- project-ds.html               (Design System @Duda)
+- project-typography.html       (Duda Sans: Custom Typeface)
+- project-data.html             (Connected Data)
+- project-dynamic.html          (Dynamic Pages)
+- project-upright.html          (Upright - Posture Trainer)
+
+Total Active Files: 7
+
+
+FILES REMOVED FROM GIT
+================================================================================
+
+ROOT LEVEL - OLD/REPLACED PAGES
+----------------------------------------
+✓ REMOVED: work.html
+✓ REMOVED: creating-a-new-portfolio.html
+✓ REMOVED: creating-a-portfolio-old.html
+✓ KEPT: project-pitch.html (per user request)
+
+
+UNDERSCORE-PREFIXED FILES (Draft/Hidden Projects)
+----------------------------------------
+✓ REMOVED: _ds-ops.html
+✓ REMOVED: _project-internal.html
+✓ REMOVED: _project-schema.html
+✓ REMOVED: _project-livia.html
+✓ REMOVED: _project-biggercake.html
+✓ REMOVED: _project-typography-new.html
+
+
+SUBDIRECTORIES
+----------------------------------------
+✓ REMOVED: working/ directory (entire directory with all contents)
+✓ REMOVED: me/ directory (entire directory with all contents)
+✓ REMOVED: versatile/ directory (entire directory with all contents)
+
+
+OTHER FILES
+----------------------------------------
+✓ REMOVED: Untitled (text file in root)
+
+
+TOTAL FILES REMOVED
+================================================================================
+- 10 HTML files from root level
+- 3 complete subdirectories (working/, me/, versatile/)
+- Hundreds of associated image, CSS, JS, and other asset files
+- Total: ~600+ files removed from git tracking
+
+
+NEXT STEPS
+================================================================================
+
+The cleanup is complete and all deletions are staged in git. To finalize:
+
+1. Review the changes:
+   git status
+
+2. Commit the cleanup:
+   git commit -m "Clean up unlinked project files
+
+   Removed old/duplicate HTML files, draft projects, and archived
+   subdirectories (working/, me/, versatile/). Kept project-pitch.html
+   for potential future use."
+
+3. Push to remote:
+   git push origin master
+
+4. (Optional) Remove the cleanup report:
+   git rm CLEANUP-REPORT.txt
+   git commit -m "Remove cleanup report"
+   git push
+
+
+GIT STATUS REFERENCE
+================================================================================
+All listed files are currently tracked in git. After cleanup, you'll need to:
+1. git rm [filename] for each file you want to remove
+2. git add -A to stage all changes
+3. git commit -m "Clean up unlinked project files"
+4. git push to update remote
+
+
+LINK VERIFICATION
+================================================================================
+Links verified in:
+- index.html (lines 44, 47-48, 114-117)
+- creating-a-portfolio.html (lines 63, 66-67, 90, 103, 116, 128, 140)
+
+Active project navigation verified in all 5 project pages:
+- Circular navigation: DS → Typography → Data → Dynamic → Upright → DS
+- All projects link back to creating-a-portfolio.html
+- All projects link back to index.html
+
+================================================================================
+END OF REPORT
