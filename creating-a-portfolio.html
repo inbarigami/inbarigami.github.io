@@ -2,23 +2,9 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180221969-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-180221969-1');
-  </script>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
 
   <title>Portfolio - Inbar Amir</title>
 
@@ -28,15 +14,9 @@
   <meta property="og:image" content="/assets/img/og-image.png" />
 
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="icon" type="image/png" href="assets/img/fav.png" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/css/agency.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <script type="text/javascript">
     window.heap = window.heap || [], heap.load = function (e, t) {
@@ -209,15 +189,14 @@
         <p>Template by <a href="https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox"
             target="_blank" class="a-link">Tutorialzine</a>. Humans courtesy of <a href="https://www.openpeeps.com/"
             target="_blank" class="a-link">Open
-            Peeps</a>.</br>© Inbar Amir 2020</p>
+            Peeps</a>.</br>© Inbar Amir 2025</p>
       </div>
       <div class="footer-social">
-        <a href="mailto:inbarp@gmail.com" target="_blank"><i class="fa fa-envelope social"></i></a>
-        <a href="https://www.facebook.com/inbarigami/" target="_blank"><i class="fa fa-facebook social"></i></a>
-        <a href="https://twitter.com/inbarigami" target="_blank"><i class="fa fa-twitter social"></i></a>
-        <a href="https://www.instagram.com/inbarigami/" target="_blank"><i class="fa fa-instagram social"></i></a>
-        <a href="https://www.linkedin.com/in/inbar-amir-bb34901b/" target="_blank"><i
-            class="fa fa-linkedin social"></i></a>
+        <a href="mailto:inbarp@gmail.com" target="_blank"><i class="fa-solid fa-envelope social"></i></a>
+        <a href="https://www.facebook.com/inbarigami/" target="_blank"><i class="fa-brands fa-facebook social"></i></a>
+        <a href="https://twitter.com/inbarigami" target="_blank"><i class="fa-brands fa-x-twitter social"></i></a>
+        <a href="https://www.instagram.com/inbarigami/" target="_blank"><i class="fa-brands fa-instagram social"></i></a>
+        <a href="https://www.linkedin.com/in/inbar-amir-bb34901b/" target="_blank"><i class="fa-brands fa-linkedin social"></i></a>
       </div>
     </div>
   </footer>
@@ -231,38 +210,6 @@
   <script src="assets/vendor/popper/popper.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  <!-- Portfolio Filter JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function (e) {
-          e.preventDefault();
-          const filterValue = this.getAttribute('data-filter');
-
-          // Remove active class from all buttons
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          // Add active class to clicked button
-          this.classList.add('active');
-
-          // Filter portfolio cards
-          portfolioCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-
-            if (filterValue === 'all' || cardCategory === filterValue) {
-              card.classList.remove('hidden');
-              card.style.display = 'flex';
-            } else {
-              card.classList.add('hidden');
-              card.style.display = 'none';
-            }
-          });
-        });
-      });
-    });
-  </script>
 
 </body>
 
