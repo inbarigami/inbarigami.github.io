@@ -63,7 +63,7 @@ a:hover {
 }
 
 .highlight {
-  background: linear-gradient(to bottom, #8bd5f8 0%, #8bc5f9 100%);
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--accent) 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 4px 50px;
@@ -75,14 +75,14 @@ a:hover {
 }
 
 .a-link {
-  background: linear-gradient(to bottom, #8bd5f8 0%, #8bc5f9 100%);
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--accent) 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
-  background-size: 2px 4px;
+  background-size: 2px 3px;
   color: var(--text);
   text-decoration: none;
   padding: 2px;
-  transition: background-size 0.2s;
+  transition: background-size 0.2s, color 0.2s;
 }
 
 footer .a-link {
@@ -119,10 +119,11 @@ section {
 
 section h3.title {
   color: var(--text);
-  font: 20px "Montserrat", sans-serif;
+  font: 22px "Montserrat", sans-serif;
   margin-bottom: 8px;
-  font-weight: 600;
+  font-weight: 700;
   text-align: left;
+  letter-spacing: -0.01em;
 }
 
 section p.subtitle {
@@ -138,7 +139,7 @@ section p {
   font: 16px "Montserrat", sans-serif;
   margin-bottom: 35px;
   padding: 0 0;
-  line-height: 150%;
+  line-height: 1.75;
   color: var(--text);
 }
 
@@ -235,16 +236,21 @@ ul.grid {
  	Header
 -------------*/
 header {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--text);
-  padding: 35px 100px 0;
+  padding: 20px 100px;
+  background: rgba(251, 251, 253, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(20, 22, 26, 0.07);
+  transition: box-shadow 0.2s ease;
 }
 
 header .site-title {
@@ -268,6 +274,19 @@ header nav li {
   margin: 0 15px;
 }
 
+header nav a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0.7;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+header nav a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
 header nav li:first-child {
   margin-left: 0;
 }
@@ -285,6 +304,11 @@ header nav li:last-child {
   color: var(--text);
   text-align: center;
   background-color: var(--bg);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
 }
 
 /* New semantic hero structure */
@@ -351,8 +375,10 @@ header nav li:last-child {
 
 .hero h1 {
   font: 64px "Montserrat", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .hero h2 {
@@ -362,10 +388,11 @@ header nav li:last-child {
 }
 
 .hero h3 {
-  font: 24px "Montserrat", sans-serif;
+  font: 20px "Montserrat", sans-serif;
   margin-bottom: 40px;
   font-weight: 300;
-  line-height: 150%;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .hero a.btn {
@@ -478,8 +505,8 @@ header nav li:last-child {
 ---------------------*/
 .productbg {
   position: relative;
-  background-color: #e8effe;
-  gap: 120px;
+  background-color: #f5f5f7;
+  gap: 100px;
 }
 
 .product {
@@ -537,7 +564,7 @@ header nav li:last-child {
 .things {
   justify-content: center;
   text-align: center;
-  background-color: #1d5869;
+  background-color: #16213e;
   text-align: left;
 }
 
@@ -780,8 +807,9 @@ footer {
   align-items: center;
   text-align: center;
   color: #fff;
-  background-color: #23262d;
-  padding: 30px 0;
+  background-color: #16181f;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 /* New semantic footer layout */
@@ -1193,7 +1221,7 @@ button::-moz-focus-inner,
 }
 
 .carousel-dot.active {
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--accent);
   transform: scale(1.2);
 }
 
@@ -1203,6 +1231,12 @@ button::-moz-focus-inner,
 
 .social {
   padding: 15px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.social:hover {
+  color: var(--accent) !important;
+  transform: translateY(-2px);
 }
 
 /*---------------------
@@ -2354,8 +2388,11 @@ button::-moz-focus-inner,
   --surface: #ffffff;
   --soft: rgba(20, 22, 26, 0.03);
   --shadow: 0 10px 30px rgba(20, 22, 26, 0.08);
+  --shadow-hover: 0 16px 40px rgba(20, 22, 26, 0.13);
   --radius: 12px;
   --max: 1120px;
+  --accent: #5b7fff;
+  --accent-muted: rgba(91, 127, 255, 0.12);
 
   /* Typography - Font Families */
   --font-primary: "Montserrat", sans-serif;
@@ -2537,9 +2574,10 @@ header {
 }
 
 .portfolio-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-  border-color: rgba(20, 22, 26, 0.16);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+  border-top: 3px solid var(--accent);
 }
 
 /* Make entire card feel clickable without changing structure */
@@ -3391,4 +3429,95 @@ h3[id] {
   .big-letter {
     font-size: min(18vw, 60px);
   }
+}
+
+/* =========================
+   DESIGN REFRESH 2025
+========================= */
+
+/* Subtle scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(20,22,26,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(20,22,26,0.35); }
+
+/* HR — lighter, thinner */
+hr {
+  height: 1px;
+  background-color: rgba(20,22,26,0.08);
+  border: 0;
+  margin-bottom: 20px;
+}
+
+/* Site title accent on hover */
+.site-title {
+  transition: color 0.15s ease;
+}
+.site-title:hover {
+  color: var(--accent) !important;
+  opacity: 1 !important;
+}
+
+/* Project images — subtle lift on hover */
+.project-hero-img,
+.project-img,
+.brand-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section:hover .project-hero-img {
+  box-shadow: 0 8px 32px rgba(20,22,26,0.1);
+}
+
+/* Portfolio gallery — display grid (ensure it works) */
+.portfolio-gallery {
+  display: grid;
+}
+
+/* Section headings — tighter and bolder feel */
+section h3.title {
+  line-height: 1.25;
+}
+
+/* Subtitle style — slightly lighter */
+section p.subtitle {
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  opacity: 0.75;
+}
+
+/* Features icon accent */
+.features .grid li i {
+  color: var(--accent);
+}
+
+/* Project nav buttons — accent on hover */
+.project-nav-btn:hover svg path {
+  fill: var(--accent);
+}
+
+/* TOC active link */
+.toc-nav a.active {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+/* Smooth section transitions — remove hard colour bands */
+section {
+  transition: background-color 0.3s ease;
+}
+
+/* Card image rounded corners */
+.portfolio-card .card-image {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f7;
+}
+
+.portfolio-card .card-image img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .card-image img {
+  transform: scale(1.03);
 }
