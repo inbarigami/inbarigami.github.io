@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design System - Inbar Amir</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/hub.css">
+
+  <style>
+    /* ── Design System page styles ── */
+    body { background: var(--bg); color: var(--text); font-family: var(--font-primary); }
+
+    .ds-wrap { max-width: 1120px; margin: 0 auto; padding: 80px 40px; }
+
+    .ds-header { margin-bottom: 64px; border-bottom: 1px solid var(--border); padding-bottom: 32px; }
+    .ds-header h1 { font-size: var(--font-2xl); font-weight: var(--weight-bold); letter-spacing: -0.02em; margin: 0 0 8px; }
+    .ds-header p { font-size: var(--font-sm); color: var(--muted); margin: 0; }
+
+    .ds-section { margin-bottom: 64px; display: block !important; padding: 0 !important; }
+    .ds-section-title {
+      font-size: var(--font-xs);
+      font-weight: var(--weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin: 0 0 24px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Color swatches */
+    .ds-swatches { display: flex; flex-wrap: wrap; gap: 16px; }
+    .ds-swatch {
+      display: flex; flex-direction: column; gap: 8px; min-width: 120px;
+    }
+    .ds-swatch-color {
+      width: 80px; height: 80px; border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .ds-swatch-label { font-size: var(--font-xs); color: var(--muted); }
+    .ds-swatch-value { font-size: var(--font-xs); font-family: monospace; color: var(--text); }
+
+    /* Typography scale */
+    .ds-type-scale { display: flex; flex-direction: column; gap: 16px; }
+    .ds-type-row { display: flex; align-items: baseline; gap: 24px; }
+    .ds-type-meta { width: 160px; flex-shrink: 0; font-size: var(--font-xs); color: var(--muted); font-family: monospace; }
+    .ds-type-sample { color: var(--text); }
+
+    /* Spacing */
+    .ds-spacing { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+    .ds-space-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .ds-space-bar { background: var(--accent-muted); border: 1px dashed var(--accent); border-radius: 4px; width: 32px; }
+    .ds-space-label { font-size: var(--font-xs); font-family: monospace; color: var(--muted); text-align: center; }
+
+    /* Shadow tokens */
+    .ds-shadows { display: flex; gap: 24px; flex-wrap: wrap; }
+    .ds-shadow-item {
+      width: 140px; height: 80px; border-radius: var(--radius);
+      background: var(--card); display: flex; align-items: center;
+      justify-content: center; font-size: var(--font-xs); color: var(--muted);
+      font-family: monospace;
+    }
+
+    /* Radius */
+    .ds-radii { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .ds-radius-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .ds-radius-box { width: 80px; height: 80px; background: var(--accent-muted); border: 1px solid var(--accent); }
+    .ds-radius-label { font-size: var(--font-xs); font-family: monospace; color: var(--muted); }
+
+    /* Hub card preview — reuse hub.css classes */
+    .ds-hub-preview {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Portfolio card preview — inline working.html overrides */
+    .ds-portfolio-preview {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .ds-portfolio-card {
+      border: 1px solid rgba(20,22,26,0.1); border-radius: var(--radius);
+      background: var(--card); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .ds-portfolio-card:hover {
+      box-shadow: var(--shadow); transform: translateY(-2px);
+    }
+    .ds-portfolio-card .card-image {
+      height: 140px; background: var(--soft);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ds-portfolio-card .card-image span { font-size: var(--font-xs); color: var(--muted); }
+    .ds-portfolio-card .card-content { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .ds-portfolio-card .card-content .title { font-size: 16px; font-weight: var(--weight-semibold); color: var(--text); margin: 0; }
+    .ds-portfolio-card .card-content p { color: var(--muted); font-size: 13px; margin: 0; line-height: 1.5; }
+
+    /* Nav/header preview */
+    .ds-header-preview {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .ds-header-preview header {
+      position: static !important; transform: none !important;
+    }
+
+    /* Token table */
+    .ds-token-table { width: 100%; border-collapse: collapse; font-size: var(--font-sm); }
+    .ds-token-table th {
+      text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border);
+      font-size: var(--font-xs); text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--muted); font-weight: var(--weight-semibold);
+    }
+    .ds-token-table td {
+      padding: 10px 12px; border-bottom: 1px solid var(--soft);
+      vertical-align: middle;
+    }
+    .ds-token-table tr:last-child td { border-bottom: none; }
+    .ds-token-table code { font-family: monospace; font-size: var(--font-xs); background: var(--soft); padding: 2px 6px; border-radius: 4px; }
+    .ds-color-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid var(--border); vertical-align: middle; margin-right: 8px; }
+
+    /* Divider */
+    .ds-divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+    /* Pages grid */
+    .ds-pages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .ds-page-card {
+      text-decoration: none; color: inherit;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .ds-page-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .ds-page-thumb {
+      background: var(--soft); height: 140px; position: relative; overflow: hidden;
+    }
+    .ds-page-thumb-bar { height: 3px; width: 100%; }
+    .ds-page-thumb-content { padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+    .ds-page-thumb-content--center { align-items: center; justify-content: center; padding-top: 20px; }
+    .ds-page-thumb-line {
+      height: 6px; background: var(--border); border-radius: 3px; width: 70%;
+    }
+    .ds-page-thumb-line--wide { width: 90%; }
+    .ds-page-thumb-line--short { width: 45%; }
+    .ds-page-thumb-line--dark { background: rgba(20,22,26,0.2); height: 8px; margin-bottom: 4px; }
+    .ds-page-thumb-row { display: flex; gap: 6px; margin-top: 4px; }
+    .ds-page-thumb-block { flex: 1; height: 40px; background: var(--border); border-radius: 4px; }
+    .ds-page-thumb-card { flex: 1; height: 52px; background: var(--card); border: 1px solid var(--border); border-radius: 6px; }
+    .ds-page-thumb-split { display: flex; gap: 8px; margin-top: 4px; align-items: flex-start; }
+    .ds-page-thumb-img { flex: 1; height: 36px; background: var(--border); border-radius: 4px; }
+    .ds-page-thumb-lines { flex: 1; display: flex; flex-direction: column; gap: 5px; padding-top: 2px; }
+    .ds-page-thumb-stub {
+      font-size: 9px; font-family: monospace; color: var(--muted);
+      border: 1px dashed var(--border); padding: 3px 8px; border-radius: 4px; margin-top: 4px;
+    }
+    .ds-page-info { padding: 12px 14px; background: var(--card); border-top: 1px solid var(--border); }
+    .ds-page-name { display: block; font-size: var(--font-sm); font-weight: var(--weight-semibold); color: var(--text); }
+    .ds-page-file { display: block; font-size: var(--font-xs); font-family: monospace; color: var(--muted); margin-top: 2px; }
+
+    /* Content row */
+    .ds-content-rows { display: flex; flex-direction: column; gap: 2px; }
+    .ds-content-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+      align-items: center; padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ds-content-row:last-child { border-bottom: none; }
+    .ds-content-row--reversed .ds-content-row-image { order: 2; }
+    .ds-content-row--reversed .ds-content-row-text { order: 1; }
+    .ds-content-row-placeholder {
+      background: var(--soft); border: 1px dashed var(--border);
+      border-radius: var(--radius); height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: var(--font-xs); color: var(--muted); font-family: monospace;
+    }
+    .ds-content-row-label {
+      font-size: var(--font-xs); font-weight: var(--weight-semibold);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--muted); margin: 0 0 8px;
+    }
+    .ds-content-row-title {
+      font-size: var(--font-xl); font-weight: var(--weight-bold);
+      letter-spacing: -0.02em; line-height: var(--leading-tight);
+      color: var(--text); margin: 0 0 16px;
+    }
+    .ds-content-row-body {
+      font-size: var(--font-base); color: var(--muted);
+      line-height: var(--leading-relaxed); margin: 0;
+    }
+
+    /* Article / case study */
+    .ds-article { max-width: 720px; }
+    .ds-article-hero { margin-bottom: 32px; }
+    .ds-article-title {
+      font-size: var(--font-2xl); font-weight: var(--weight-bold);
+      letter-spacing: -0.03em; line-height: var(--leading-tight);
+      color: var(--text); margin: 8px 0 12px;
+    }
+    .ds-article-subtitle {
+      font-size: var(--font-base); color: var(--muted);
+      line-height: var(--leading-relaxed); margin: 0;
+    }
+    .ds-article-image-full { margin-bottom: 32px; }
+    .ds-article-body {
+      font-size: var(--font-base); color: var(--text);
+      line-height: var(--leading-relaxed); margin-bottom: 32px;
+    }
+    .ds-article-body p { margin: 0 0 16px; }
+    .ds-article-body p:last-child { margin: 0; }
+    .ds-article-image-pair {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px;
+    }
+    .ds-article-image-pair .ds-content-row-placeholder { height: 160px; }
+    .ds-article-caption {
+      font-size: var(--font-xs); color: var(--muted);
+      line-height: var(--leading-normal); margin: 0;
+    }
+
+    /* Color coding chips */
+    .ds-color-coding { display: flex; gap: 12px; flex-wrap: wrap; }
+    .ds-color-chip {
+      display: flex; flex-direction: column; gap: 4px;
+      padding: 20px 20px 16px;
+      border: 1px solid var(--border);
+      border-radius: 0 0 var(--radius) var(--radius);
+      background: var(--card); min-width: 160px;
+    }
+    .ds-color-chip-name { font-size: var(--font-sm); font-weight: var(--weight-semibold); color: var(--text); }
+    .ds-color-chip-token { font-size: var(--font-xs); font-family: monospace; color: var(--muted); }
+    .ds-color-chip-value { font-size: var(--font-xs); font-family: monospace; color: var(--muted); }
+
+    /* Footer preview */
+    .ds-footer-preview {
+      background: var(--text); color: #fff;
+      border-radius: var(--radius); padding: 32px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-primary);
+    }
+    .ds-footer-preview p { font-size: var(--font-sm); color: rgba(255,255,255,0.7); margin: 0; }
+    .ds-footer-preview .ds-social-icons { display: flex; gap: 4px; }
+    .ds-footer-preview .ds-social-icons i { padding: 12px; font-size: 16px; color: rgba(255,255,255,0.7); transition: color 0.15s ease; cursor: pointer; }
+    .ds-footer-preview .ds-social-icons i:hover { color: #fff; }
+
+    /* Filter pill preview */
+    .ds-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .ds-pill {
+      border: 1px solid var(--border); color: var(--text);
+      background: var(--card); border-radius: 999px;
+      padding: 10px 14px; font-size: 14px;
+      font-family: var(--font-primary); cursor: pointer;
+    }
+    .ds-pill--active { background: var(--text); color: #fff; border-color: var(--text); }
+
+    /* Link style preview */
+    .ds-link-preview { display: flex; flex-direction: column; gap: 16px; }
+    .ds-link-demo { font-size: var(--font-base); }
+
+    /* TOC preview */
+    .ds-toc-preview {
+      width: 240px; border-right: 1px solid var(--border);
+      padding: 20px 20px 20px 0;
+    }
+    .ds-toc-title { font-size: 16px; font-weight: var(--weight-semibold); color: var(--text); margin-bottom: 12px; }
+    .ds-toc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
+    .ds-toc-link {
+      display: block; padding: 8px 12px; color: var(--muted);
+      font-size: 13px; border-radius: 2px; text-decoration: none;
+      font-family: var(--font-primary);
+    }
+    .ds-toc-link--h2 { font-weight: var(--weight-semibold); color: var(--text); font-size: 14px; padding-top: 12px; }
+    .ds-toc-link--active { background: var(--active-bg); color: var(--text); font-weight: var(--weight-semibold); border-left: 2px solid var(--text); padding-left: 10px; }
+    .ds-toc-link:hover { background: var(--hover-bg); color: var(--text); }
+
+    /* Project nav bar preview */
+    .ds-project-nav {
+      background: var(--card); border-top: 1px solid var(--border);
+      box-shadow: 0 -2px 10px var(--hover-bg);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px 0; position: relative;
+    }
+    .ds-project-nav-btn {
+      position: absolute; display: flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: var(--weight-medium);
+      color: var(--text); font-family: var(--font-primary);
+      background: none; border: none; cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .ds-project-nav-btn:hover { transform: translateY(-1px); }
+    .ds-project-nav-btn--prev { left: 40px; }
+    .ds-project-nav-btn--next { right: 40px; flex-direction: row-reverse; }
+    .ds-project-nav-btn--center { position: static; }
+
+    /* Info blocks */
+    .ds-info-blocks { display: flex; gap: 20px; flex-wrap: wrap; }
+    .ds-note-preview {
+      background: var(--accent-muted); padding: 16px 20px;
+      border-radius: var(--radius); font-size: var(--font-sm);
+      font-family: var(--font-primary); font-weight: var(--weight-semibold);
+      color: var(--text); max-width: 320px;
+    }
+
+    /* Full-bleed component previews */
+    .ds-component-full {
+      margin: 0 -40px;
+    }
+
+    @media (max-width: 768px) {
+      .ds-wrap { padding: 40px 24px; }
+      .ds-hub-preview { grid-template-columns: 1fr 1fr; }
+      .ds-portfolio-preview { grid-template-columns: 1fr; }
+      .ds-component-full { margin: 0 -24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html"><span class="site-title">Inbar Amir</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="design-system.html" class="active">Design System</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="ds-wrap">
+
+    <div class="ds-header">
+      <h1>Design System</h1>
+      <p>Tokens and components for inbar.is — edit <code>assets/css/styles.css</code> and <code>assets/css/hub.css</code> to see changes cascade through.</p>
+    </div>
+
+    <!-- ── COLORS ── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Colors — Base</h2>
+      <div class="ds-swatches">
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--bg);"></div>
+          <div class="ds-swatch-label">--bg</div>
+          <div class="ds-swatch-value">#fbfbfd</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--text);"></div>
+          <div class="ds-swatch-label">--text</div>
+          <div class="ds-swatch-value">#14161a</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--muted);"></div>
+          <div class="ds-swatch-label">--muted</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.68)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--border);"></div>
+          <div class="ds-swatch-label">--border</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.1)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--card); border: 1px solid var(--border);"></div>
+          <div class="ds-swatch-label">--card / --surface</div>
+          <div class="ds-swatch-value">#ffffff</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--soft);"></div>
+          <div class="ds-swatch-label">--soft</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.03)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--accent);"></div>
+          <div class="ds-swatch-label">--accent</div>
+          <div class="ds-swatch-value">#5b7fff</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--accent-muted);"></div>
+          <div class="ds-swatch-label">--accent-muted</div>
+          <div class="ds-swatch-value">rgba(91,127,255,.12)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Colors — Borders & States</h2>
+      <div class="ds-swatches">
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--soft);"></div>
+          <div class="ds-swatch-label">--soft</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.03)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--hover-bg);"></div>
+          <div class="ds-swatch-label">--hover-bg</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.05)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--border-soft);"></div>
+          <div class="ds-swatch-label">--border-soft</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.06)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--border);"></div>
+          <div class="ds-swatch-label">--border</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.1)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--active-bg);"></div>
+          <div class="ds-swatch-label">--active-bg</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.12)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--border-strong);"></div>
+          <div class="ds-swatch-label">--border-strong</div>
+          <div class="ds-swatch-value">rgba(20,22,26,.2)</div>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-color" style="background: var(--focus-ring);"></div>
+          <div class="ds-swatch-label">--focus-ring</div>
+          <div class="ds-swatch-value">rgba(109,165,251,.45)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Colors — Section Color Coding</h2>
+      <div class="ds-color-coding">
+        <div class="ds-color-chip" style="border-top: 3px solid var(--color-working);">
+          <span class="ds-color-chip-name">Working</span>
+          <span class="ds-color-chip-token">--color-working</span>
+          <span class="ds-color-chip-value">#5b7fff</span>
+        </div>
+        <div class="ds-color-chip" style="border-top: 3px solid var(--color-building);">
+          <span class="ds-color-chip-name">Building</span>
+          <span class="ds-color-chip-token">--color-building</span>
+          <span class="ds-color-chip-value">#1a7a4a</span>
+        </div>
+        <div class="ds-color-chip" style="border-top: 3px solid var(--color-traveling);">
+          <span class="ds-color-chip-name">Traveling</span>
+          <span class="ds-color-chip-token">--color-traveling</span>
+          <span class="ds-color-chip-value">#c47a1a</span>
+        </div>
+        <div class="ds-color-chip" style="border-top: 3px solid var(--color-self);">
+          <span class="ds-color-chip-name">Self-centered</span>
+          <span class="ds-color-chip-token">--color-self</span>
+          <span class="ds-color-chip-value">#c4386a</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="ds-divider">
+
+    <!-- ── TYPOGRAPHY ── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Typography — Scale</h2>
+      <div class="ds-type-scale">
+        <div class="ds-type-row">
+          <div class="ds-type-meta">--font-xs / 12px</div>
+          <div class="ds-type-sample" style="font-size: var(--font-xs);">The quick brown fox</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">--font-sm / 14px</div>
+          <div class="ds-type-sample" style="font-size: var(--font-sm);">The quick brown fox</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">--font-base / 16px</div>
+          <div class="ds-type-sample" style="font-size: var(--font-base);">The quick brown fox</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">--font-lg / 20px</div>
+          <div class="ds-type-sample" style="font-size: var(--font-lg);">The quick brown fox</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">--font-xl / 24px</div>
+          <div class="ds-type-sample" style="font-size: var(--font-xl);">The quick brown fox</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">--font-2xl / 32px</div>
+          <div class="ds-type-sample" style="font-size: var(--font-2xl); font-weight: var(--weight-bold); letter-spacing: -0.02em;">The quick brown fox</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">--font-3xl / 48px</div>
+          <div class="ds-type-sample" style="font-size: var(--font-3xl); font-weight: var(--weight-bold); letter-spacing: -0.03em;">The quick brown fox</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">--font-4xl / 56px</div>
+          <div class="ds-type-sample" style="font-size: var(--font-4xl); font-weight: var(--weight-bold); letter-spacing: -0.03em;">Hi, I'm Inbar.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Typography — Weights</h2>
+      <div style="display: flex; gap: 32px; flex-wrap: wrap;">
+        <div>
+          <div style="font-weight: var(--weight-light); font-size: var(--font-lg);">Light 300</div>
+          <div class="ds-swatch-label">--weight-light</div>
+        </div>
+        <div>
+          <div style="font-weight: var(--weight-normal); font-size: var(--font-lg);">Normal 400</div>
+          <div class="ds-swatch-label">--weight-normal</div>
+        </div>
+        <div>
+          <div style="font-weight: var(--weight-medium); font-size: var(--font-lg);">Medium 500</div>
+          <div class="ds-swatch-label">--weight-medium</div>
+        </div>
+        <div>
+          <div style="font-weight: var(--weight-semibold); font-size: var(--font-lg);">Semibold 600</div>
+          <div class="ds-swatch-label">--weight-semibold</div>
+        </div>
+        <div>
+          <div style="font-weight: var(--weight-bold); font-size: var(--font-lg);">Bold 700</div>
+          <div class="ds-swatch-label">--weight-bold</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="ds-divider">
+
+    <!-- ── SPACING & RADIUS ── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Spacing</h2>
+      <div class="ds-spacing">
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 4px;"></div>
+          <div class="ds-space-label">4px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 8px;"></div>
+          <div class="ds-space-label">8px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 12px;"></div>
+          <div class="ds-space-label">12px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 16px;"></div>
+          <div class="ds-space-label">16px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 20px;"></div>
+          <div class="ds-space-label">20px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 24px;"></div>
+          <div class="ds-space-label">24px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 32px;"></div>
+          <div class="ds-space-label">32px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 40px;"></div>
+          <div class="ds-space-label">40px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 60px;"></div>
+          <div class="ds-space-label">60px</div>
+        </div>
+        <div class="ds-space-item">
+          <div class="ds-space-bar" style="height: 80px;"></div>
+          <div class="ds-space-label">80px</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Border Radius</h2>
+      <div class="ds-radii">
+        <div class="ds-radius-item">
+          <div class="ds-radius-box" style="border-radius: 0;"></div>
+          <div class="ds-radius-label">0 — card tops</div>
+        </div>
+        <div class="ds-radius-item">
+          <div class="ds-radius-box" style="border-radius: 4px;"></div>
+          <div class="ds-radius-label">4px — small</div>
+        </div>
+        <div class="ds-radius-item">
+          <div class="ds-radius-box" style="border-radius: var(--radius);"></div>
+          <div class="ds-radius-label">--radius / 12px</div>
+        </div>
+        <div class="ds-radius-item">
+          <div class="ds-radius-box" style="border-radius: 9999px; width: 80px; height: 40px;"></div>
+          <div class="ds-radius-label">pill</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Shadows</h2>
+      <div class="ds-shadows">
+        <div class="ds-shadow-item" style="box-shadow: var(--shadow);">--shadow</div>
+        <div class="ds-shadow-item" style="box-shadow: var(--shadow-hover);">--shadow-hover</div>
+        <div class="ds-shadow-item" style="box-shadow: none; border: 1px solid var(--border);">none</div>
+      </div>
+    </section>
+
+    <hr class="ds-divider">
+
+    <!-- ── PAGES ── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Pages</h2>
+      <div class="ds-pages-grid">
+        <a href="index.html" class="ds-page-card">
+          <div class="ds-page-thumb">
+            <div class="ds-page-thumb-bar" style="background: var(--color-working);"></div>
+            <div class="ds-page-thumb-content">
+              <div class="ds-page-thumb-line ds-page-thumb-line--wide ds-page-thumb-line--dark"></div>
+              <div class="ds-page-thumb-row">
+                <div class="ds-page-thumb-block"></div>
+                <div class="ds-page-thumb-block"></div>
+                <div class="ds-page-thumb-block"></div>
+                <div class="ds-page-thumb-block"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ds-page-info">
+            <span class="ds-page-name">Home</span>
+            <span class="ds-page-file">index.html</span>
+          </div>
+        </a>
+        <a href="working.html" class="ds-page-card">
+          <div class="ds-page-thumb">
+            <div class="ds-page-thumb-bar" style="background: var(--color-working);"></div>
+            <div class="ds-page-thumb-content">
+              <div class="ds-page-thumb-line ds-page-thumb-line--wide ds-page-thumb-line--dark"></div>
+              <div class="ds-page-thumb-row">
+                <div class="ds-page-thumb-card"></div>
+                <div class="ds-page-thumb-card"></div>
+                <div class="ds-page-thumb-card"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ds-page-info">
+            <span class="ds-page-name">Working</span>
+            <span class="ds-page-file">working.html</span>
+          </div>
+        </a>
+        <a href="self-centered.html" class="ds-page-card">
+          <div class="ds-page-thumb">
+            <div class="ds-page-thumb-bar" style="background: var(--color-self);"></div>
+            <div class="ds-page-thumb-content">
+              <div class="ds-page-thumb-line ds-page-thumb-line--wide ds-page-thumb-line--dark"></div>
+              <div class="ds-page-thumb-split">
+                <div class="ds-page-thumb-img"></div>
+                <div class="ds-page-thumb-lines">
+                  <div class="ds-page-thumb-line"></div>
+                  <div class="ds-page-thumb-line"></div>
+                  <div class="ds-page-thumb-line ds-page-thumb-line--short"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ds-page-info">
+            <span class="ds-page-name">Self-centered</span>
+            <span class="ds-page-file">self-centered.html</span>
+          </div>
+        </a>
+        <a href="project-ds.html" class="ds-page-card">
+          <div class="ds-page-thumb">
+            <div class="ds-page-thumb-bar" style="background: var(--color-working);"></div>
+            <div class="ds-page-thumb-content">
+              <div class="ds-page-thumb-line ds-page-thumb-line--wide ds-page-thumb-line--dark"></div>
+              <div class="ds-page-thumb-img" style="height: 48px; margin-bottom: 6px;"></div>
+              <div class="ds-page-thumb-line"></div>
+              <div class="ds-page-thumb-line ds-page-thumb-line--short"></div>
+            </div>
+          </div>
+          <div class="ds-page-info">
+            <span class="ds-page-name">Project page</span>
+            <span class="ds-page-file">project-*.html</span>
+          </div>
+        </a>
+        <a href="building.html" class="ds-page-card">
+          <div class="ds-page-thumb">
+            <div class="ds-page-thumb-bar" style="background: var(--color-building);"></div>
+            <div class="ds-page-thumb-content ds-page-thumb-content--center">
+              <div class="ds-page-thumb-line ds-page-thumb-line--wide ds-page-thumb-line--dark"></div>
+              <div class="ds-page-thumb-line ds-page-thumb-line--short"></div>
+              <span class="ds-page-thumb-stub">coming soon</span>
+            </div>
+          </div>
+          <div class="ds-page-info">
+            <span class="ds-page-name">Building</span>
+            <span class="ds-page-file">building.html</span>
+          </div>
+        </a>
+        <a href="traveling.html" class="ds-page-card">
+          <div class="ds-page-thumb">
+            <div class="ds-page-thumb-bar" style="background: var(--color-traveling);"></div>
+            <div class="ds-page-thumb-content ds-page-thumb-content--center">
+              <div class="ds-page-thumb-line ds-page-thumb-line--wide ds-page-thumb-line--dark"></div>
+              <div class="ds-page-thumb-line ds-page-thumb-line--short"></div>
+              <span class="ds-page-thumb-stub">coming soon</span>
+            </div>
+          </div>
+          <div class="ds-page-info">
+            <span class="ds-page-name">Traveling</span>
+            <span class="ds-page-file">traveling.html</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <hr class="ds-divider">
+
+    <!-- ── COMPONENTS ── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component — Hub Cards</h2>
+      <nav class="hub-sections ds-hub-preview" aria-label="Hub card preview" style="padding: 0;">
+        <a href="#" class="hub-card hub-card-wide" style="border-top: 3px solid var(--color-working); text-decoration: none;">
+          <span class="hub-card-name">Working</span>
+          <span class="hub-card-desc">Design systems, custom typefaces, and product work</span>
+          <i class="fa-solid fa-arrow-right hub-arrow" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="hub-card" style="border-top: 3px solid var(--color-building); text-decoration: none;">
+          <span class="hub-card-name">Building</span>
+          <span class="hub-card-desc">Tools and things I made</span>
+          <i class="fa-solid fa-arrow-right hub-arrow" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="hub-card" style="border-top: 3px solid var(--color-traveling); text-decoration: none;">
+          <span class="hub-card-name">Traveling</span>
+          <span class="hub-card-desc">Itineraries and trip notes</span>
+          <i class="fa-solid fa-arrow-right hub-arrow" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="hub-card" style="border-top: 3px solid var(--color-self); text-decoration: none;">
+          <span class="hub-card-name">Self-centered</span>
+          <span class="hub-card-desc">Dogs, bread, languages</span>
+          <i class="fa-solid fa-arrow-right hub-arrow" aria-hidden="true"></i>
+        </a>
+      </nav>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component — Portfolio Cards</h2>
+      <div class="ds-portfolio-preview">
+        <div class="ds-portfolio-card">
+          <div class="card-image"><span>image 200×140</span></div>
+          <div class="card-content">
+            <div class="title">Design System @Duda</div>
+            <p>Building a Design System in Sketch &amp; Figma.</p>
+          </div>
+        </div>
+        <div class="ds-portfolio-card">
+          <div class="card-image"><span>image 200×140</span></div>
+          <div class="card-content">
+            <div class="title">Duda Sans: A Custom Typeface</div>
+            <p>A custom variable font designed for clarity, scalability, and distinction.</p>
+          </div>
+        </div>
+        <div class="ds-portfolio-card">
+          <div class="card-image"><span>image 200×140</span></div>
+          <div class="card-content">
+            <div class="title">Connected Data</div>
+            <p>Sync external data and display it on your site.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section ds-section--full-bleed">
+      <h2 class="ds-section-title">Component — Header / Nav</h2>
+      <div class="ds-component-full">
+      <div class="ds-header-preview">
+        <header style="position: static; transform: none;">
+          <a href="#"><span class="site-title">Inbar Amir</span></a>
+          <nav>
+            <ul>
+              <li><a href="#">Working</a></li>
+              <li><a href="#">Building</a></li>
+              <li><a href="#">Traveling</a></li>
+              <li><a href="#">Self-centered</a></li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component — Content Row (self-centered style)</h2>
+      <div class="ds-content-rows">
+        <div class="ds-content-row">
+          <div class="ds-content-row-image">
+            <div class="ds-content-row-placeholder">image</div>
+          </div>
+          <div class="ds-content-row-text">
+            <p class="ds-content-row-label">Category</p>
+            <h3 class="ds-content-row-title">Section heading goes here</h3>
+            <p class="ds-content-row-body">Body text goes here. This is the pattern for alternating image/text rows used on pages like Self-centered.</p>
+          </div>
+        </div>
+        <div class="ds-content-row ds-content-row--reversed">
+          <div class="ds-content-row-image">
+            <div class="ds-content-row-placeholder">image</div>
+          </div>
+          <div class="ds-content-row-text">
+            <p class="ds-content-row-label">Category</p>
+            <h3 class="ds-content-row-title">Reversed layout</h3>
+            <p class="ds-content-row-body">Alternating rows flip image and text sides. Same token usage throughout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component — Case Study / Article (project pages)</h2>
+      <div class="ds-article">
+        <div class="ds-article-hero">
+          <p class="ds-content-row-label">Design Systems</p>
+          <h2 class="ds-article-title">Project title goes here</h2>
+          <p class="ds-article-subtitle">A one-line description of the project and what it involved.</p>
+        </div>
+        <div class="ds-article-image-full">
+          <div class="ds-content-row-placeholder" style="height: 220px; border-radius: var(--radius);">hero image</div>
+        </div>
+        <div class="ds-article-body">
+          <p>Body copy for the case study. This constrained column width keeps prose readable — roughly 65–70 characters per line.</p>
+          <p>A second paragraph. Headers, lists, and captions all share the same token set.</p>
+        </div>
+        <div class="ds-article-image-pair">
+          <div class="ds-content-row-placeholder" style="border-radius: var(--radius);">image</div>
+          <div class="ds-content-row-placeholder" style="border-radius: var(--radius);">image</div>
+        </div>
+        <p class="ds-article-caption">Caption text — both images above. Uses --font-xs, --muted.</p>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component — Filter Pills</h2>
+      <div class="ds-pills">
+        <button class="ds-pill ds-pill--active">All</button>
+        <button class="ds-pill">Design Systems</button>
+        <button class="ds-pill">Typography</button>
+        <button class="ds-pill">Product</button>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component — Link Styles</h2>
+      <div class="ds-link-preview">
+        <div class="ds-link-demo">
+          Standard link: <a href="#" class="a-link">Read more about this project</a>
+        </div>
+        <div class="ds-link-demo" style="color: var(--muted); font-size: var(--font-sm);">
+          Footer link (on dark): shown in the footer component below
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component — Info Blocks</h2>
+      <div class="ds-info-blocks">
+        <div class="ds-note-preview">
+          This is a note block — used to call out context or caveats inside project pages.
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <h2 class="ds-section-title">Component — TOC Sidebar</h2>
+      <nav class="ds-toc-preview" aria-label="Table of contents preview">
+        <div class="ds-toc-title">Contents</div>
+        <ul class="ds-toc-list">
+          <li><a href="#" class="ds-toc-link ds-toc-link--h2">Overview</a></li>
+          <li><a href="#" class="ds-toc-link">The problem</a></li>
+          <li><a href="#" class="ds-toc-link ds-toc-link--active">Design decisions</a></li>
+          <li><a href="#" class="ds-toc-link">Components</a></li>
+          <li><a href="#" class="ds-toc-link ds-toc-link--h2">Outcome</a></li>
+          <li><a href="#" class="ds-toc-link">Results</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="ds-section ds-section--full-bleed">
+      <h2 class="ds-section-title">Component — Project Nav Bar</h2>
+      <div class="ds-component-full">
+        <div style="height: 60px; background: var(--soft); display: flex; align-items: center; justify-content: center; border-top: 1px solid var(--border);">
+          <span style="font-size: var(--font-xs); color: var(--muted); font-family: monospace;">page content</span>
+        </div>
+        <div class="ds-project-nav">
+          <button class="ds-project-nav-btn ds-project-nav-btn--prev">
+            <i class="fa-solid fa-arrow-left"></i> Previous
+          </button>
+          <button class="ds-project-nav-btn ds-project-nav-btn--center">All projects</button>
+          <button class="ds-project-nav-btn ds-project-nav-btn--next">
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section ds-section--full-bleed">
+      <h2 class="ds-section-title">Component — Footer</h2>
+      <div class="ds-component-full">
+      <div class="ds-footer-preview" style="border-radius: 0;">
+        <p>Humans courtesy of <span style="text-decoration: underline; color: #fff;">Open Peeps</span>.<br>© Inbar Amir 2025</p>
+        <div class="ds-social-icons">
+          <i class="fa-solid fa-envelope"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <hr class="ds-divider">
+
+    <!-- ── TOKEN REFERENCE ── -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Token Reference</h2>
+      <table class="ds-token-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>--bg</code></td><td>#fbfbfd</td><td>Page background</td></tr>
+          <tr><td><code>--text</code></td><td>#14161a</td><td>Body text, headings</td></tr>
+          <tr><td><code>--muted</code></td><td>rgba(20,22,26,.68)</td><td>Subtitles, metadata, icons</td></tr>
+          <tr><td><code>--border-soft</code></td><td>rgba(20,22,26,.06)</td><td>Subtle dividers, header borders</td></tr>
+          <tr><td><code>--border</code></td><td>rgba(20,22,26,.1)</td><td>Card borders, dividers</td></tr>
+          <tr><td><code>--border-strong</code></td><td>rgba(20,22,26,.2)</td><td>HR lines, scrollbar</td></tr>
+          <tr><td><code>--hover-bg</code></td><td>rgba(20,22,26,.05)</td><td>Hover tint (nav items, list links)</td></tr>
+          <tr><td><code>--active-bg</code></td><td>rgba(20,22,26,.12)</td><td>Active/selected state background</td></tr>
+          <tr><td><code>--focus-ring</code></td><td>rgba(109,165,251,.45)</td><td>Keyboard focus outline</td></tr>
+          <tr><td><code>--card / --surface</code></td><td>#ffffff</td><td>Card and panel backgrounds</td></tr>
+          <tr><td><code>--soft</code></td><td>rgba(20,22,26,.03)</td><td>Subtle fills, hover tints</td></tr>
+          <tr><td><code>--accent</code></td><td>#5b7fff</td><td>Interactive highlights, arrows on hover</td></tr>
+          <tr><td><code>--accent-muted</code></td><td>rgba(91,127,255,.12)</td><td>Accent tint backgrounds</td></tr>
+          <tr><td><code>--shadow</code></td><td>0 10px 30px …</td><td>Card shadow at rest</td></tr>
+          <tr><td><code>--shadow-hover</code></td><td>0 16px 40px …</td><td>Card shadow on hover</td></tr>
+          <tr><td><code>--radius</code></td><td>12px</td><td>Cards, modals, inputs</td></tr>
+          <tr><td><code>--max</code></td><td>1120px</td><td>Max content width</td></tr>
+          <tr><td><code>--color-working</code></td><td>#5b7fff</td><td>Working section accent</td></tr>
+          <tr><td><code>--color-building</code></td><td>#1a7a4a</td><td>Building section accent</td></tr>
+          <tr><td><code>--color-traveling</code></td><td>#c47a1a</td><td>Traveling section accent</td></tr>
+          <tr><td><code>--color-self</code></td><td>#c4386a</td><td>Self-centered section accent</td></tr>
+          <tr><td><code>--font-primary</code></td><td>Montserrat</td><td>All UI text</td></tr>
+          <tr><td><code>--font-xs … --font-4xl</code></td><td>12px – 56px</td><td>Type scale</td></tr>
+          <tr><td><code>--weight-light … --weight-bold</code></td><td>300 – 700</td><td>Font weights</td></tr>
+          <tr><td><code>--leading-tight / -normal / -relaxed</code></td><td>1.25 / 1.5 / 1.7</td><td>Line heights</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-text">
+        <p>© Inbar Amir 2025</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+/* Hub homepage styles */
+
+.hub-page main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.hub-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Hero */
+.hub-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 0;
+  min-height: 600px;
+}
+
+.hub-hero-text {
+  flex: 1;
+}
+
+.hub-hero-text h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.hub-hero-text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 480px;
+  margin: 0;
+}
+
+.hub-hero-image {
+  flex-shrink: 0;
+  width: 420px;
+  height: 420px;
+}
+
+.hub-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Section grid */
+.hub-sections {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 32px 0 60px;
+}
+
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 24px;
+  background: var(--bg, #fff);
+  border: 1px solid rgba(20, 22, 26, 0.08);
+  border-radius: 0 0 12px 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  position: relative;
+}
+
+.hub-card:hover {
+  background: rgba(20, 22, 26, 0.02);
+  border-color: rgba(20, 22, 26, 0.15);
+}
+
+.hub-card:hover .hub-arrow {
+  transform: translateX(3px);
+  color: var(--accent);
+  opacity: 1;
+}
+
+.hub-card:hover .hub-card-name {
+  color: var(--accent);
+}
+
+/* Coming soon — non-interactive cards */
+.hub-card--soon {
+  cursor: default;
+  opacity: 0.5;
+}
+.hub-card--soon:hover {
+  background: transparent;
+  border-color: var(--border);
+  transform: none;
+}
+.hub-card--soon:hover .hub-arrow,
+.hub-card--soon:hover .hub-card-name {
+  color: var(--text);
+  transform: none;
+  opacity: 0.4;
+}
+
+.hub-card-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  transition: color 0.15s ease;
+}
+
+.hub-card-wide .hub-card-name {
+  font-size: 24px;
+}
+
+.hub-card-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.hub-arrow {
+  font-size: 14px;
+  color: var(--muted);
+  opacity: 0.4;
+  margin-top: auto;
+  align-self: flex-end;
+  transition: transform 0.2s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hub-main {
+    padding: 0 24px;
+  }
+
+  .hub-hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 40px 24px;
+    min-height: unset;
+    gap: 24px;
+  }
+
+  .hub-hero-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hub-sections {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hub-card-wide {
+    grid-column: span 2;
+  }
+
+  .hub-card-name {
+    font-size: 16px;
+  }
+
+  .hub-card-wide .hub-card-name {
+    font-size: 18px;
+  }
+}
