@@ -2483,7 +2483,7 @@ header {
 .project-top.portfolio .portfolio-p {
   color: var(--muted) !important;
   max-width: 60ch;
-  margin: 0;
+  margin: 0 auto;
   font-size: 18px;
   line-height: 1.5;
 }

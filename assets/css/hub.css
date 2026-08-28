@@ -96,23 +96,6 @@
   color: var(--accent);
 }
 
-/* Coming soon — non-interactive cards */
-.hub-card--soon {
-  cursor: default;
-  opacity: 0.5;
-}
-.hub-card--soon:hover {
-  background: transparent;
-  border-color: var(--border);
-  transform: none;
-}
-.hub-card--soon:hover .hub-arrow,
-.hub-card--soon:hover .hub-card-name {
-  color: var(--text);
-  transform: none;
-  opacity: 0.4;
-}
-
 .hub-card-name {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
