@@ -3508,7 +3508,7 @@ section p.subtitle {
 
 /* TOC active link */
 .toc-nav a.active {
-  color: var(--accent) !important;
+  color: var(--text) !important;
   font-weight: 600;
 }
 
